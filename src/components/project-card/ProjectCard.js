@@ -13,7 +13,7 @@ export const ProjectCard = (props) => {
     const [languages, setLanguages] = useState([]);
     const [sum, setSum] = useState(0);
     const url = 'https://api.github.com/repos/kdavid96/';
-    const my_token = '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';
+    const my_token = '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';
     var obj = [];
     var finalObj = [];
 
