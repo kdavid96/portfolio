@@ -14,6 +14,7 @@
     "aos": "^2.3.4",
     "axios": "^0.21.4",
     "bootstrap": "^5.1.1",
+    "dotenv": "^10.0.0",
     "emailjs-com": "^3.2.0",
     "font-awesome": "^4.7.0",
     "hamburger-react": "^2.4.1",
