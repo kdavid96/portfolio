@@ -1,24 +1,28 @@
-import logo from './logo.svg';
+import 'font-awesome/css/font-awesome.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
+import React, {useState} from 'react';
+
+import { About } from './components/about/about';
+import { Contact } from './components/contact/contact';
+import { Education } from './components/education/education';
+import { Home } from './components/home/home';
+import { Navbar } from './components/navbar';
+import { Projects } from './components/projects/projects';
+
 function App() {
+  const [isOpen, setOpen] = useState(false);
+  
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <main id="home"> 
+        <Navbar isOpen={isOpen} setOpen={setOpen}/>
+        <Home />
+        <Projects />
+        <Education />
+        <Contact />
+      </main>
   );
 }
 

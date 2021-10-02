@@ -1,0 +1,134 @@
+header{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    margin-right: 0px;
+    min-height: 10vh;
+    background-color: rgb(8, 12, 31);
+    justify-content: flex-end;
+    padding: 0.5rem calc((100vw - 1000px)/2);
+    z-index: 10;
+}
+
+.navLink{
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 50px;
+    cursor: pointer;
+}
+
+.navLink:active{
+    color: #15cdfc;
+}
+
+.navLink:hover{
+    color: #01bf71;
+    transition: 0.2s ease-in-out;
+}
+
+.hamburger{
+    position: relative;
+    left: 15vw;
+
+    @media screen and (max-width: 768px) {
+        display: block;
+        position: absolute;
+        right: -100vw;
+        top: -4.2vh;
+        transform: translate(-100%, 75%);
+        font-size: 1.8rem;
+        cursor: pointer;
+    }
+
+    @media only screen and (max-width: 470px) {
+        display: block;
+        position: absolute;
+        right: -100vw;
+        top: -4.2vh;
+        transform: translate(-100%, 75%);
+        font-size: 1.8rem;
+        cursor: pointer;
+    }
+}
+
+.hamburger-react{
+    left: 80vw;
+    z-index: 10000;
+}
+
+.sticky{
+    position: fixed;
+    width: 100vw;
+}
+
+
+.logo{
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    text-decoration: none;
+    padding-left: 20px;
+    padding-bottom: 10px;
+}
+
+.logo:hover{
+    color: #01bf71;
+    transition: 0.2s ease-in-out;
+}
+
+.bars{
+
+    display: none;
+    color: #fff;
+
+    @media screen and (max-width: 768px) {
+        display: block;
+        position: absolute;
+        right: -100vw;
+        top: -4.2vh;
+        transform: translate(-100%, 75%);
+        font-size: 1.8rem;
+        cursor: pointer;
+    }
+
+    @media only screen and (max-width: 470px) {
+        display: block;
+        position: absolute;
+        right: -100vw;
+        top: -4.2vh;
+        transform: translate(-100%, 75%);
+        font-size: 1.8rem;
+        cursor: pointer;
+    }
+}
+
+@media only screen and (max-width: 470px) {
+    .logo{
+        display: none;
+    }
+    
+    .navbar{
+        justify-content: normal;
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+    .navLink{
+        display: none;
+    }
+
+    .navbar{
+        justify-content: normal;
+    }
+   
+}
