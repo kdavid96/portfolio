@@ -45,6 +45,7 @@ a:hover{
 
 .education-container{
     height: 90vh !important;
+    margin-top: 25vh;
 }
 
 .about-container{
@@ -199,10 +200,9 @@ body{
 .technology-container{
     display: flex;
     flex-direction: row;
-    margin-left: 15vw;
     margin-top: 15vh;
     cursor: default;
-    width: 75vw;
+    justify-content: center;
 }
 
 .technology-card{
@@ -227,7 +227,7 @@ body{
 .progress-precentage{
     position: relative;
     left: -50%;
-    top: -30%;
+    top: -15px;
 }
 
 
@@ -550,6 +550,10 @@ li > h2, li > p{
     .progress-precentage{
         display: none;
     }
+    
+    .precentage-circle{
+        display: none;
+    }
 }
 
 @media only screen and (max-width: 1064px) {
@@ -584,6 +588,11 @@ li > h2, li > p{
 }
 
 @media only screen and (max-width: 800px){
+    .technology-image{
+        width: 75%;
+        height: auto;
+    }
+
     .project-card-no-hover{
         width: 95vw;
         height: 40vh !important;
@@ -651,6 +660,12 @@ li > h2, li > p{
     .card-desc{
         position: relative;
         top: -2vh;
+    }
+}
+
+@media only screen and (max-width: 765px) {
+    .favicon-header{
+        left: 5vw !important;
     }
 }
 
