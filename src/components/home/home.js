@@ -24,7 +24,7 @@ export const Home = () => {
                 <div className="content">
                     <div className="top-page-content">
                         <div className="top-page-text">
-                            <p className="robo">Hi 👋, my name is</p>
+                            <p className="robo">Hi <span className="wave">👋</span><span className="spaceholder"></span>, my name is</p>
                                 <h1 className="title">David <a className="rainbow_text_animated" href="/">Koppany</a></h1>
                             <p className="text">I'm a junior front-end developer based in Budapest, Hungary</p>
                         </div>

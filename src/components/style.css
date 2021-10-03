@@ -55,6 +55,27 @@ a:hover{
     padding-top: 10vh;
 }
 
+.spaceholder{
+    display: inline-block;
+    width: 30px;
+}
+
+.wave{
+    position: absolute;
+    top: 1.2vh;
+    animation: wave_animation 2s ease-in-out infinite;
+}
+
+@keyframes wave_animation {
+    0%,100% {
+        transform: rotate(15deg);
+    }
+
+    50% {
+        transform: rotate(-10deg);
+    }
+}
+
 
 @media only screen and (max-width: 1400px) {
     .content{
@@ -132,7 +153,7 @@ body{
 .top-page-image-div{
     /*background: linear-gradient(45deg, #6666ff, #0099ff , #00e1ff, #ff3399, #6666ff);*/
     position: relative;
-    left: 15rem;
+    left: 15vw;
 }
 
 .top-page-image{
@@ -197,8 +218,8 @@ li > h2, li > p{
 }
 
 .education-list{
-    width: 50vw;
-    left: 5vw;
+    width: 60vw;
+    left: 7.5vw;
 }
 
 .education-filler-img{
@@ -208,14 +229,19 @@ li > h2, li > p{
 
 .graduation-hat{
     position: relative;
-    font-size: 20rem;
-    left: 10vw;
+    font-size: 15rem;
+    left: 5vw;
+    top: 10vh;
 }
 
 .sidebar-ul{
     position: relative;
     top: 15vh;
     left: 35vw;
+}
+
+#contact{
+    overflow: hidden;
 }
 
 #contact-form{
@@ -235,6 +261,11 @@ li > h2, li > p{
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+}
+
+#contact-form textarea{
+    resize: none;
+    height: 20vh;
 }
 
 .prevent-scroll{

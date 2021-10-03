@@ -6,10 +6,19 @@ export const ProjectList = [
         techstack: 'React',
         date: '2021',
         img : './img/appointments.webp',
-        repo_name: 'kdavid96.github.io',
+        repo_name: 'portfolio',
     },
     {
         id: 2,
+        name: 'Communication',
+        desc: 'Application for communication between doctors and clients.',
+        techstack: 'Angular/Firebase',
+        date: '2021',
+        img : './img/appointments.webp',
+        repo_name: 'webkert-communication',
+    },
+    {
+        id: 3,
         name: 'Bookstore',
         desc: 'Library application for keeping an organized list of your books in one place.',
         techstack: 'React/Firebase',
@@ -17,13 +26,4 @@ export const ProjectList = [
         img : './img/bookstore.jpg',
         repo_name: 'bookstore',
     },
-    {
-        id: 3,
-        name: 'Communication',
-        desc: 'Application for communication between doctors and clients.',
-        techstack: 'Angular/Firebase',
-        date: '2021',
-        img : './img/appointments.webp',
-        repo_name: 'webkert-communication',
-    }
 ]
