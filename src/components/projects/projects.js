@@ -25,7 +25,7 @@ export const Projects = () => {
         <div className={`projects ${isActive ? "container-focus" : "" }`} id="projects">
             <Fade bottom>
                 <div className="content">
-                    <h1>Projects</h1>
+                    <h1 style={{marginTop: 100 + 'px'}}>Projects</h1>
                     <ul className="card-container">
                         {ProjectList.map((data) => <li key={data.id}><ProjectCard name={data.name} desc={data.desc} techstack={data.techstack} date={data.date} img={data.img} repo_name={data.repo_name} id={data.id}/></li>)}
                     </ul>                    

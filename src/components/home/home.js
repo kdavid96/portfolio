@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Fade from 'react-reveal/Fade';
+import CircularProgressWithLabel from '@mui/material/CircularProgress';
+import { TechnologyList } from '../home/Technologylist';
 import '../style.css' 
 export const Home = () => {
     const [scrollPosition, setScrollPosition] = useState(0);
@@ -33,6 +35,9 @@ export const Home = () => {
                                 <img alt="cv_image" className="top-page-image" src="./cv_image_big.png"/>
                             </div>
                         </div>
+                    </div>
+                    <div className="technology-container">
+                            {TechnologyList.map((data) => <li className="technology-card" key={data.id}><div className="precentage-circle"><CircularProgressWithLabel className="progress-circle" variant="determinate" value={data.progress} /><span className="progress-precentage">{data.progress}%</span></div><img className="technology-image" alt={data.name} src={data.img}></img></li>)}
                     </div>
                 </div>
             </Fade>

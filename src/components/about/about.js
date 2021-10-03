@@ -26,6 +26,7 @@ export const About = () => {
                 <div className="content">
                     <h1>About</h1>
                     <p>This is the about section, that has to be filled up with some interesting text and maybe some fascinating data.</p>
+
                 </div>
             </Fade>
         </div>

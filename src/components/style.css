@@ -196,6 +196,41 @@ body{
 	}
 }
 
+.technology-container{
+    display: flex;
+    flex-direction: row;
+    margin-left: 15vw;
+    margin-top: 15vh;
+    cursor: default;
+    width: 75vw;
+}
+
+.technology-card{
+    width: 15vw;
+    height: min(15vh, 15vw);
+    background-color: #04060F;
+    display: inline-flex;
+    justify-content: center;
+    margin-right: 17px;
+    border-radius: 15px;
+}
+
+.technology-image{
+    width: 100px;
+    height: auto;
+}
+
+.precentage-circle{
+    margin-right: 15px;
+}
+
+.progress-precentage{
+    position: relative;
+    left: -50%;
+    top: -30%;
+}
+
+
 ul{
     list-style-type: none;
     padding-left:   5vw;
@@ -444,8 +479,7 @@ li > h2, li > p{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-left: 15vw;
-    margin-right: 15vw;
+    margin-left: 10%;
 }
 
 .link-footer{
@@ -493,7 +527,7 @@ li > h2, li > p{
     position: absolute;
     width: 100vw;
     height: 10vh;
-    left: -50px;
+    left: -100px;
     background-color: rgb(4, 6, 15);
     display: flex;
     justify-content: center;
@@ -508,6 +542,12 @@ li > h2, li > p{
 
 @media only screen and (max-width: 1470px) {
     .top-page-image-div{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    .progress-precentage{
         display: none;
     }
 }

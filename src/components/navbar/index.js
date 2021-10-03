@@ -42,14 +42,17 @@ export const Navbar = ({ isOpen, setOpen }) => {
     return (
       <nav className="navbar sticky" style={{backgroundColor: isActive ? 'rgba(4, 6, 15, 1)' : 'rgba(4, 6, 15, 1)'}}>
         <Fade top>
+            <a href="navLink" onClick={handleClick}><img className="favicon-header" src="./favicon.png"></img></a>
             <Sling toggled={isOpen} onToggle={toggled => {
               setOpen(!isOpen);
               }} rounded color="#fff" className="hamburger"/>
             {/*<Bars isOpen={isOpen} onClick={() => setOpen(!isOpen)} />*/}
-            {links.map((link)=>{
-              return <a className="navLink" href={link.url} key={link.id} onClick={handleClick} ref={React.createRef()}>{link.text}</a>
-            })}
-            <div><Sidebar isOpen={isOpen} setOpen={setOpen}/></div>
+            <div className="links">
+              {links.map((link)=>{
+                return <a className="navLink" href={link.url} key={link.id} onClick={handleClick} ref={React.createRef()}>{link.text}</a>
+              })}
+              <div><Sidebar isOpen={isOpen} setOpen={setOpen}/></div>
+            </div>
           </Fade>
       </nav>
     )
