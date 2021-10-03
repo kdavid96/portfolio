@@ -708,4 +708,22 @@ li > h2, li > p{
     .card-link{
         left: -5vw;
     }
+
+    .education-list{
+        width: 100vw;
+        left: 0;
+    }
+
+    .education-li{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .education-li p{
+        text-align: center;
+    }
+
+    .education-li h2{
+        text-align: center;
+    }
 }
