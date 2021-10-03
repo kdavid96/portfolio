@@ -27,7 +27,6 @@ export const ProjectCard = (props) => {
                 var langSum = 0;
                 obj = Object.entries(data.data);
                 obj.forEach(([_, value]) => langSum += value);
-                console.log(data);
                 obj.forEach(([key, value]) => finalObj.push(key) && finalObj.push(value));
                 setLanguages(finalObj);
                 setSum(langSum);

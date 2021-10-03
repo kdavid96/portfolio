@@ -28,10 +28,9 @@ export const Education = () => {
                     <h1>Education</h1>
                     <div className="education-filler-img">
                         <ul className="education-list">
-                            <li className="education-li"><h1>University of Szeged</h1><h2>Szeged</h2><p>2019-2022</p></li>
-                            <li className="education-li"><h1>Istvan Szechenyi High School</h1><h2>Kecskemet</h2><p>2011-2016</p></li>
+                            <li className="education-li">University of Szeged</li>
+                            <li className="education-li">Istvan Szechenyi High School</li>
                         </ul>
-                        <span className="graduation-hat">🎓</span>
                     </div>
                 </div>
             </Fade>

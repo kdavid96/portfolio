@@ -37,7 +37,7 @@ export const Home = () => {
                         </div>
                     </div>
                     <div className="technology-container">
-                            {TechnologyList.map((data) => <li className="technology-card" key={data.id}><div className="precentage-circle"><CircularProgressWithLabel className="progress-circle" variant="determinate" value={data.progress} /><span className="progress-precentage">{data.progress}%</span></div><img className="technology-image" alt={data.name} src={data.img}></img></li>)}
+                            {TechnologyList.map((data) => <li className="technology-card" key={data.id}><img className="technology-image" alt={data.name} src={data.img}></img></li>)}
                     </div>
                 </div>
             </Fade>

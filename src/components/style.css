@@ -54,6 +54,9 @@ a:hover{
 
 .education-li{
     padding-top: 10vh;
+    display: block;
+    text-align: center !important;
+    font-size: 2rem;
 }
 
 .spaceholder{
@@ -254,12 +257,12 @@ li > h2, li > p{
 
 .education-list{
     width: 60vw;
-    left: 7.5vw;
 }
 
 .education-filler-img{
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 
 .graduation-hat{
@@ -301,6 +304,19 @@ li > h2, li > p{
 #contact-form textarea{
     resize: none;
     height: 20vh;
+}
+
+.error-message{
+    color: #d00;
+    width: 65vw;
+    text-align: center;
+}
+
+.success-message{
+    display: none;
+    color: rgb(0, 221, 111);
+    width: 65vw;
+    text-align: center;
 }
 
 .prevent-scroll{
@@ -717,13 +733,6 @@ li > h2, li > p{
     .education-li{
         display: flex;
         flex-direction: column;
-    }
-
-    .education-li p{
-        text-align: center;
-    }
-
-    .education-li h2{
         text-align: center;
     }
 }
