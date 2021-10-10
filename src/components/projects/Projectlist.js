@@ -7,6 +7,7 @@ export const ProjectList = [
         date: '2021',
         img : './img/appointments.webp',
         repo_name: 'portfolio',
+        live: 'https://koppanydavid.netlify.app',
     },
     {
         id: 2,
@@ -16,6 +17,7 @@ export const ProjectList = [
         date: '2021',
         img : './img/appointments.webp',
         repo_name: 'webkert-communication',
+        live: 'https://webkert-4b250.web.app/',
     },
     {
         id: 3,
@@ -25,5 +27,6 @@ export const ProjectList = [
         date: '2021',
         img : './img/bookstore.jpg',
         repo_name: 'ecommerce-react-redux',
+        live: '',
     },
 ]

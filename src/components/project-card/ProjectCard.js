@@ -125,7 +125,11 @@ export const ProjectCard = (props) => {
                         <p className="card-techstack">{props.techstack}</p>
                         <p className="card-date">{props.date}</p>
                         <div className="buttons">
-                            <Button href="liveversion" target="_blank">Live Version</Button>
+                            {props.live.length > 0 ?
+                                <Button href={props.live} target="_blank">Live Version</Button>
+                                :
+                                <br/>
+                            }
                             <Button href={link} target="_blank">See Code</Button>
                         </div>
                     </a>
