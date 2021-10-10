@@ -19,11 +19,11 @@ export const ProjectList = [
     },
     {
         id: 3,
-        name: 'Bookstore',
-        desc: 'Library application for keeping an organized list of your books in one place.',
-        techstack: 'React/Firebase',
+        name: 'E-commerce',
+        desc: 'E-commerce app made width React and Redux.',
+        techstack: 'React/Redux',
         date: '2021',
         img : './img/bookstore.jpg',
-        repo_name: 'bookstore',
+        repo_name: 'ecommerce-react-redux',
     },
 ]
