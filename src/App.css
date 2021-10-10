@@ -13,4 +13,5 @@ html, body{
   scrollbar-width: thin;
   background-color: rgb(8, 12, 31);
   overflow-x: hidden;
+  position: relative;
 }
