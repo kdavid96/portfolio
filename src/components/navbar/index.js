@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react'
 import Fade from 'react-reveal/Fade';
 import { links } from '../../Data'
 import { Sidebar } from '../sidebar';
+import { ScrollProgress } from '../scroll-progress/ScrollProgress';
+import ProgressBar from "react-scroll-progress-bar";
 import { Sling } from 'hamburger-react';
 import './Navbar.css';
 
@@ -54,6 +56,9 @@ export const Navbar = ({ isOpen, setOpen }) => {
               <div><Sidebar isOpen={isOpen} setOpen={setOpen}/></div>
             </div>
           </Fade>
+          <div className="progress-bar">
+            <ProgressBar bgcolor="#00cc83" className="progress-bar"/>
+          </div>
       </nav>
     )
 }

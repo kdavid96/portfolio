@@ -556,6 +556,24 @@ li > h2, li > p{
     padding-right: 5vw;
 }
 
+.progressMainWrapper{
+    background-color: #0f0f20;
+    height: 15px;
+    position: relative;
+    bottom: -1.3vh;
+    left: 0;
+    z-index: 1;
+    width:100vw;
+}
+
+.progressMainStyle{
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 15px;
+    background-color: #00cc83;
+}
+
 @media only screen and (max-width: 1470px) {
     .top-page-image-div{
         display: none;

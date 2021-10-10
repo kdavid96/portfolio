@@ -82,7 +82,6 @@ header{
     width: 100vw;
 }
 
-
 .logo{
     color: white;
     font-size: 2rem;
@@ -95,6 +94,11 @@ header{
 .logo:hover{
     color: #01bf71;
     transition: 0.2s ease-in-out;
+}
+
+.progress-bar{
+    position: absolute;
+    left: 0 !important;
 }
 
 .bars{
