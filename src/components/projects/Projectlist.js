@@ -22,7 +22,7 @@ export const ProjectList = [
     {
         id: 3,
         name: 'E-commerce',
-        desc: 'E-commerce app made width React and Redux.',
+        desc: 'E-commerce app made width React and Redux. Work in progress.',
         techstack: 'React/Redux',
         date: '2021',
         img : './img/bookstore.jpg',
