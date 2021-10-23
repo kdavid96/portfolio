@@ -27,6 +27,6 @@ export const ProjectList = [
         date: '2021',
         img : './img/bookstore.jpg',
         repo_name: 'ecommerce-react-redux',
-        live: '',
+        live: 'https://kdavid-react-redux-ecommerce.netlify.app/',
     },
 ]

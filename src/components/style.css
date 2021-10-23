@@ -11,11 +11,13 @@ a:hover{
     height: 90vh;
     background-color: rgb(8, 12, 31);
     color: white;
+    z-index: 0;
 }
 
 .container.home{
     position: relative;
     top: 15vh;
+    overflow: hidden !important;
 }
 
 .container.education, .container.projects, .container.about{
@@ -540,15 +542,14 @@ li > h2, li > p{
 }
 
 .sidebar-div{
-    position: absolute;
+    position: fixed;
     width: 100vw;
     height: 10vh;
-    left: -100px;
     background-color: rgb(4, 6, 15);
     display: flex;
     justify-content: center;
     align-content: center;
-    z-index: 0;
+    z-index: 1;
 }
 
 .sidebar-div .top-links{
@@ -572,6 +573,27 @@ li > h2, li > p{
     left: 0;
     height: 15px;
     background-color: #00cc83;
+}
+
+.technology-notations{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 35%;
+    position: relative;
+    top: 75%;
+    left: 2%;
+}
+
+.technology-notation{
+    color: white;
+    background-color: rgb(15, 19, 36);
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    margin-left: 10px;
+    border: 2px solid #01BF71;
 }
 
 @media only screen and (max-width: 1470px) {
@@ -600,7 +622,7 @@ li > h2, li > p{
 @media only screen and (max-width: 960px){
 
     #contact{
-        margin-top: 60vh;
+        margin-top: 5vh;
     }
 
     .buttons{
@@ -694,6 +716,15 @@ li > h2, li > p{
     .card-desc{
         position: relative;
         top: -2vh;
+    }
+
+    #contact-form{
+        left: 5vw;
+        width: 90vw;
+    }
+
+    #contact-form input, textarea{
+        width: 85vw;
     }
 }
 

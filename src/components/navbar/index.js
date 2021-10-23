@@ -42,9 +42,10 @@ export const Navbar = ({ isOpen, setOpen }) => {
     }
   }
     return (
+      <>
       <nav className="navbar sticky" style={{backgroundColor: isActive ? 'rgba(4, 6, 15, 1)' : 'rgba(4, 6, 15, 1)'}}>
         <Fade top>
-            <a href="navLink" onClick={handleClick}><img className="favicon-header" src="./favicon.png"></img></a>
+            <a href="navLink" onClick={handleClick} style={{position: 'relative', left: '5vw'}}><img className="favicon-header" src="./favicon.png" alt="logo"/></a>
             <Sling toggled={isOpen} onToggle={toggled => {
               setOpen(!isOpen);
               }} rounded color="#fff" className="hamburger"/>
@@ -53,12 +54,13 @@ export const Navbar = ({ isOpen, setOpen }) => {
               {links.map((link)=>{
                 return <a className="navLink" href={link.url} key={link.id} onClick={handleClick} ref={React.createRef()}>{link.text}</a>
               })}
-              <div><Sidebar isOpen={isOpen} setOpen={setOpen}/></div>
             </div>
           </Fade>
           <div className="progress-bar">
             <ProgressBar bgcolor="#00cc83" className="progress-bar"/>
           </div>
       </nav>
+      <Sidebar isOpen={isOpen} setOpen={setOpen}/>
+      </>
     )
 }

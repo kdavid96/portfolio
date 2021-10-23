@@ -20,7 +20,6 @@ function App() {
         <Navbar isOpen={isOpen} setOpen={setOpen}/>
         <Home />
         <Projects />
-        <Education />
         <Contact />
       </main>
   );

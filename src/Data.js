@@ -9,11 +9,11 @@ export const links = [
         text:'projects',
         url:'#projects'
     },
-    {
+    /*{
         id:2,
         text:'education',
         url:'#education'
-    },
+    },*/
     {
         id:3,
         text:'contact',

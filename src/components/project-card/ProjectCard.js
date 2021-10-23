@@ -41,6 +41,13 @@ export const ProjectCard = (props) => {
             .then(data => setLink(data.data.html_url))
             .catch( error => console.error(error));
             setLoading(false);
+            languages.push('JavaScript');
+            languages.push(45);
+            languages.push('HTML');
+            languages.push(45);
+            languages.push('CSS');
+            languages.push(45);
+
     }, [])
 
     const renderSwitch = (language, precentage, sum) => {
@@ -119,7 +126,7 @@ export const ProjectCard = (props) => {
         return (
             <div className="project-card-no-hover" key={props.id} style={{backgroundColor: '#04060f'}}>
                 <div className="project-card" key={props.id} style={{backgroundColor: 'transparent'}}>
-                    <a href={link} target="_blank" className="card-link">
+                    <a /*href={link} target="_blank"*/ className="card-link">
                         <h1 className="card-title">{props.name}</h1>
                         <p className="card-desc">{props.desc}</p>
                         <p className="card-techstack">{props.techstack}</p>
@@ -135,19 +142,22 @@ export const ProjectCard = (props) => {
                     </a>
                     {languages.length > 0 ? (
                         <>
-                        <ProgressBar min={0} max={100} className="card-progress">
+                        {/*<ProgressBar min={0} max={100} className="card-progress">
                             {renderProgressBar()}
                         </ProgressBar>
                         <div className="notation">
                             {renderNotations()}
+                        </div>*/}
+                        <div className="technology-notations">
+                            {languages.map((language, index) => index % 2 === 0 ? <span className="technology-notation">{language}</span> : '')}
                         </div>
                         </>
                     ) : (
                         <>
-                            <ProgressBar className="card-progress">
+                            {/*<ProgressBar className="card-progress">
                                 <ProgressBar style={{height: "400%"}} min={0} max={100} variant="info" now={0} label={`${sum}%`}/>
-                            </ProgressBar>
-                            <p className="empty">My GitHub repo is empty ❌</p>
+                            </ProgressBar>*/}
+                            <p className="empty">My GitHub repository is empty ❌</p>
                         </>
                     )}
                     <div className="project-card-hover">
