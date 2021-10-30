@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import Fade from 'react-reveal/Fade';
+import cv from '../../cv.pdf';
 import { links } from '../../Data'
 import { Sidebar } from '../sidebar';
-import { ScrollProgress } from '../scroll-progress/ScrollProgress';
 import ProgressBar from "react-scroll-progress-bar";
 import { Sling } from 'hamburger-react';
 import './Navbar.css';
@@ -52,7 +52,12 @@ export const Navbar = ({ isOpen, setOpen }) => {
             {/*<Bars isOpen={isOpen} onClick={() => setOpen(!isOpen)} />*/}
             <div className="links">
               {links.map((link)=>{
-                return <a className="navLink" href={link.url} key={link.id} onClick={handleClick} ref={React.createRef()}>{link.text}</a>
+                if(link.url === '#cv'){
+                  return <a className="navLink" href={cv} key={link.id} target="_blank" rel="noreferrer" ref={React.createRef()}>{link.text}</a>
+                }
+                else{
+                  return <a className="navLink" href={link.url} key={link.id} onClick={handleClick} ref={React.createRef()}>{link.text}</a>
+                }
               })}
             </div>
           </Fade>

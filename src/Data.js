@@ -6,7 +6,7 @@ export const links = [
     },*/
     {
         id:1,
-        text:'projects',
+        text:'Projects',
         url:'#projects'
     },
     /*{
@@ -16,7 +16,12 @@ export const links = [
     },*/
     {
         id:3,
-        text:'contact',
+        text:'Contact',
         url:'#contact'
     },
+    {
+        id: 3,
+        text: 'CV',
+        url: '#cv'
+    }
 ]

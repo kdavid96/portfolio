@@ -1,0 +1,12 @@
+.navLinkHamburger{
+    color: white;
+    font-size: 1rem;
+    padding-right: 5vw;
+    text-decoration: none;
+}
+
+.navLinkHamburger:hover{
+    color: #01bf71;
+    -webkit-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+}

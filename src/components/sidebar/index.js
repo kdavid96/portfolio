@@ -1,5 +1,7 @@
-import React from 'react'
-import { SidebarLink } from './Sidebar'
+import React from 'react';
+import { SidebarLink } from './Sidebar';
+import cv from '../../cv.pdf';
+import './style.css';
 
 
 export const Sidebar = ({isOpen, setOpen}) => {
@@ -13,6 +15,7 @@ export const Sidebar = ({isOpen, setOpen}) => {
             <SidebarLink className="top-links" to="education" onClick={openLink}>Education</SidebarLink>*/}
             <SidebarLink className="top-links" to="projects" onClick={openLink}>Projects</SidebarLink>
             <SidebarLink className="top-links" to="contact" onClick={openLink}>Contact</SidebarLink>
+            <SidebarLink className="top-links" to="projects"><a className="navLinkHamburger" href={cv} target="_blank" rel="noreferrer">CV</a></SidebarLink>
         </div>
     )
 }
