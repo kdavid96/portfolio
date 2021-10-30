@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import Fade from 'react-reveal/Fade';
-import CircularProgressWithLabel from '@mui/material/CircularProgress';
 import { TechnologyList } from '../home/Technologylist';
 import '../style.css' 
 export const Home = () => {

@@ -27,7 +27,7 @@ export const Projects = () => {
                 <div className="content">
                     <h1 style={{marginTop: 100 + 'px'}}>Projects</h1>
                     <ul className="card-container">
-                        {ProjectList.map((data) => <li key={data.id}><ProjectCard name={data.name} desc={data.desc} techstack={data.techstack} date={data.date} img={data.img} repo_name={data.repo_name} id={data.id} live={data.live}/></li>)}
+                        {ProjectList.map((data) => <Fade left><li key={data.id}><ProjectCard name={data.name} desc={data.desc} techstack={data.techstack} date={data.date} img={data.img} repo_name={data.repo_name} id={data.id} live={data.live}/></li></Fade>)}
                     </ul>                    
                 </div>
             </Fade>

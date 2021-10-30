@@ -4,11 +4,15 @@ a:hover{
     color: white;
 }
 
+.btn-primary{
+    margin-right: 10px;
+}
+
 .container{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    min-height: 90vh;
     background-color: rgb(8, 12, 31);
     color: white;
     z-index: 0;
@@ -16,7 +20,6 @@ a:hover{
 
 .container.home{
     position: relative;
-    top: 15vh;
     overflow: hidden !important;
 }
 
@@ -31,18 +34,21 @@ a:hover{
     align-content: center;
     position: relative;
     top: 15vh;
-    height: 140vh;
+    min-height: 1600px;
+    height: auto;
     color: white;
+    overflow: hidden;
 }
 
 .buttons{
-    position: relative;
-    left: 50vw;
-    width: 25%;
-    display: grid;
-    grid-gap: 10px;
-    opacity: 1;
     transition: opacity 1.5s ease-in-out .8s;
+}
+
+.button-notation-container{
+    width: 100%;
+    height: 35%;
+    display: flex;
+    justify-content: space-between;
 }
 
 .education-container{
@@ -281,6 +287,7 @@ li > h2, li > p{
 }
 
 #contact{
+    position: relative;
     overflow: hidden;
 }
 
@@ -576,23 +583,17 @@ li > h2, li > p{
 }
 
 .technology-notations{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    width: 35%;
-    position: relative;
-    top: 75%;
-    left: 2%;
+    cursor: default;
 }
 
 .technology-notation{
     color: white;
-    background-color: rgb(15, 19, 36);
+    background-color: #01BF71;
     padding: 5px;
     padding-left: 10px;
     padding-right: 10px;
     border-radius: 10px;
-    margin-left: 10px;
+    margin-right: 10px;
     border: 2px solid #01BF71;
 }
 
@@ -627,7 +628,13 @@ li > h2, li > p{
 
     .buttons{
         display: flex;
-        left: 45vw;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100px;
+        left: -10px;
+        margin: 0;
+        position: relative;
+        padding-bottom: 10px;
     }
 
     .empty{
@@ -636,10 +643,6 @@ li > h2, li > p{
 
     .notation p {
         font-size: .8rem;
-    }
-
-    .contact-title{
-        left: 4vw;
     }
 }
 
@@ -650,8 +653,8 @@ li > h2, li > p{
     }
 
     .project-card-no-hover{
-        width: 95vw;
-        height: 40vh !important;
+        width: 96vw;
+        height: 50vh !important;
     }
 
     .card-link{
@@ -665,7 +668,6 @@ li > h2, li > p{
     .card-container{
         grid-template-columns: 1fr;
         overflow: visible;
-        margin: 2rem 0;
     }
 
     .project-card-no-hover{
@@ -679,7 +681,13 @@ li > h2, li > p{
     }
 
     .buttons{
-        width: 100%;
+    }
+
+    .button-notation-container{
+        width: 97%;
+        left: 6%;
+        flex-direction: column;
+        height: 150px;
     }
 
     .card-progress {
@@ -697,9 +705,8 @@ li > h2, li > p{
         transition: 1s ease-in-out;
     }
 
-    .top-page-content{
-        margin-left: 0;
-        transition: 1s ease-in-out;
+    .technology-notations{
+        width: 50%;
     }
 
     ul{
@@ -748,12 +755,14 @@ li > h2, li > p{
     }
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 550px){
     .buttons{
-        left: -1vw;
-        top: 3vh;
     }
     
+    .top-page-content{
+        margin-left: 0;
+        transition: 1s ease-in-out;
+    }
 }
 
 @media only screen and (max-width: 500px){
@@ -783,5 +792,12 @@ li > h2, li > p{
         display: flex;
         flex-direction: column;
         text-align: center;
+    }
+
+    .technology-notations{
+        top: 26%;
+        left: -10%;
+        width: auto;
+        margin-top: 5px;
     }
 }

@@ -131,6 +131,7 @@ export const ProjectCard = (props) => {
                         <p className="card-desc">{props.desc}</p>
                         <p className="card-techstack">{props.techstack}</p>
                         <p className="card-date">{props.date}</p>
+                        <div className="button-notation-container">
                         <div className="buttons">
                             {props.live.length > 0 ?
                                 <Button href={props.live} target="_blank">Live Version</Button>
@@ -139,27 +140,28 @@ export const ProjectCard = (props) => {
                             }
                             <Button href={link} target="_blank">See Code</Button>
                         </div>
-                    </a>
-                    {languages.length > 0 ? (
-                        <>
-                        {/*<ProgressBar min={0} max={100} className="card-progress">
-                            {renderProgressBar()}
-                        </ProgressBar>
-                        <div className="notation">
-                            {renderNotations()}
-                        </div>*/}
-                        <div className="technology-notations">
-                            {languages.map((language, index) => index % 2 === 0 ? <span className="technology-notation">{language}</span> : '')}
+                        {languages.length > 0 ? (
+                            <>
+                            {/*<ProgressBar min={0} max={100} className="card-progress">
+                                {renderProgressBar()}
+                            </ProgressBar>
+                            <div className="notation">
+                                {renderNotations()}
+                            </div>*/}
+                            <div className="technology-notations">
+                                {languages.map((language, index) => index % 2 === 0 ? <span className="technology-notation">{language}</span> : '')}
+                            </div>
+                            </>
+                        ) : (
+                            <>
+                                {/*<ProgressBar className="card-progress">
+                                    <ProgressBar style={{height: "400%"}} min={0} max={100} variant="info" now={0} label={`${sum}%`}/>
+                                </ProgressBar>*/}
+                                <p className="empty">My GitHub repository is empty ❌</p>
+                            </>
+                        )}
                         </div>
-                        </>
-                    ) : (
-                        <>
-                            {/*<ProgressBar className="card-progress">
-                                <ProgressBar style={{height: "400%"}} min={0} max={100} variant="info" now={0} label={`${sum}%`}/>
-                            </ProgressBar>*/}
-                            <p className="empty">My GitHub repository is empty ❌</p>
-                        </>
-                    )}
+                    </a>
                     <div className="project-card-hover">
                         <img className="card-image" alt="img" src="./img/portfolio.png"></img>
                     </div>
