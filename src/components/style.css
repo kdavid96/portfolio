@@ -475,7 +475,6 @@ li > h2, li > p{
 }*/
 .empty{
     position: relative;
-    top: 20vh;
     color: white;
     width: 25vw;
     left: 0;
