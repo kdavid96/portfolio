@@ -4,24 +4,27 @@ import './App.css';
 
 import React, {useState} from 'react';
 
-import { About } from './components/about/about';
 import { Contact } from './components/contact/contact';
-import { Education } from './components/education/education';
 import { Home } from './components/home/home';
 import { Navbar } from './components/navbar';
 import { Projects } from './components/projects/projects';
 
 function App() {
   const [isOpen, setOpen] = useState(false);
-  
-  
+  const [isDark, setDark] = useState(true);
+  const Theme = {
+    cardDark: '#03040B',
+    cardLight: 'rgb(91, 125, 196)',
+    textDark: 'white',
+    textLight: 'black'
+  }
   return (
-      <main id="home"> 
-        <Navbar isOpen={isOpen} setOpen={setOpen}/>
-        <Home />
-        <Projects />
-        <Contact />
-      </main>
+    <main id="outerHome" style={{backgroundColor: isDark ? 'rgb(8,12,31)' : '#B8CDF8'}}> 
+      <Navbar isOpen={isOpen} setOpen={setOpen} isDark={isDark} setDark={setDark} theme={Theme} />
+      <Home isDark={isDark} theme={Theme} />
+      <Projects isDark={isDark} theme={Theme} />
+      <Contact isDark={isDark} theme={Theme} />
+    </main>
   );
 }
 

@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import '../style.css'
+
+import React, { useEffect, useState } from 'react'
+
 import Fade from 'react-reveal/Fade';
 import { ProjectCard } from '../project-card/ProjectCard';
 import { ProjectList } from './Projectlist';
-import '../style.css' 
 
-export const Projects = () => {
+export const Projects = ({isDark, theme}) => {
     const [scrollPosition, setScrollPosition] = useState(0);
     const handleScroll = () => {
         const position = window.pageYOffset;
@@ -25,9 +27,9 @@ export const Projects = () => {
         <div className={`projects ${isActive ? "container-focus" : "" }`} id="projects">
             <Fade bottom>
                 <div className="content">
-                    <h1 style={{marginTop: 100 + 'px'}}>Projects</h1>
+                    <h1 style={{marginTop: 50 + 'px', color: isDark ? theme.textDark : theme.textLight}}>Projects</h1>
                     <ul className="card-container">
-                        {ProjectList.map((data) => <Fade left><li key={data.id}><ProjectCard name={data.name} desc={data.desc} techstack={data.techstack} date={data.date} img={data.img} repo_name={data.repo_name} id={data.id} live={data.live}/></li></Fade>)}
+                        {ProjectList.map((data) => <Fade left><li key={data.id}><ProjectCard name={data.name} desc={data.desc} techstack={data.techstack} date={data.date} img={data.img} repo_name={data.repo_name} id={data.id} live={data.live} isDark={isDark} theme={theme}/></li></Fade>)}
                     </ul>                    
                 </div>
             </Fade>

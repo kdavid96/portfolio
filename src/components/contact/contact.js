@@ -1,13 +1,15 @@
-import React, { useState, useEffect, useRef } from 'react';
-import Fade from 'react-reveal/Fade';
-import emailjs from 'emailjs-com';
-import { useForm } from 'react-hook-form';
 import '../style.css';
-import { IconContext } from 'react-icons';
+
+import React, { useEffect, useRef, useState } from 'react';
+
+import Fade from 'react-reveal/Fade';
 import { GrGithub } from 'react-icons/gr';
 import { GrLinkedin } from 'react-icons/gr';
+import { IconContext } from 'react-icons';
+import emailjs from 'emailjs-com';
+import { useForm } from 'react-hook-form';
 
-export const Contact = () => {
+export const Contact = ({isDark}) => {
     const [scrollPosition, setScrollPosition] = useState(0);
     const handleScroll = () => {
         const position = window.pageYOffset;
@@ -40,7 +42,7 @@ export const Contact = () => {
     var isActive = false;
     if(scrollPosition >= 3430){isActive = true}
     return (
-        <div className={`container contact ${isActive ? "container-focus prevent-scroll" : "" }`} id="contact">
+        <div className={`container contact ${isActive ? "container-focus prevent-scroll" : "" } ${!isDark ? "container-dark" : ''}`} id="contact">
             <Fade bottom>
                 <div className="contact-box content">
                     <h1 className="contact-title">Contact Me ✉️</h1>
@@ -58,13 +60,13 @@ export const Contact = () => {
             </Fade>
             <Fade bottom>
                 <div className="footer">
-                    <p className="copyright-footer"> &copy;2021<br/>David Koppany</p>
+                    <p className="copyright-footer">Copyright &copy; 2021</p>
                     <div className="socials">
                         <IconContext.Provider value={{size: '1.2em', className: "github-icon" }}>
-                            <a href="https://www.github.com/kdavid96" target="_blank" className="link-footer"><GrGithub /> GitHub</a>
+                            <a style={{color: isDark ? '' : 'black'}} href="https://www.github.com/kdavid96" target="_blank" className="link-footer"><GrGithub /> GitHub</a>
                         </IconContext.Provider>
                         <IconContext.Provider value={{size: '1.2em', className: "linkedin-icon" }}>
-                            <a href="https://www.linkedin.com/in/d%C3%A1vid-kopp%C3%A1ny-580449205/" target="_blank" className="link-footer"><GrLinkedin />LinkedIn</a>
+                            <a style={{color: isDark ? '' : 'black'}} href="https://www.linkedin.com/in/d%C3%A1vid-kopp%C3%A1ny-580449205/" target="_blank" className="link-footer"><GrLinkedin />LinkedIn</a>
                         </IconContext.Provider>
                     </div>
                 </div>

@@ -1,16 +1,16 @@
+import './style.css';
+
 import React from 'react';
 import { SidebarLink } from './Sidebar';
 import cv from '../../cv.pdf';
-import './style.css';
 
-
-export const Sidebar = ({isOpen, setOpen}) => {
+export const Sidebar = ({isOpen, setOpen, isDark}) => {
     const openLink = () =>{
         document.getElementById('sidebar').style.transform = 'translateY(-140%)';
         setOpen(!isOpen);
     } 
     return (
-        <div id="sidebar" className="sidebar-div" style={{transform: isOpen ? 'translateY(80%)' : 'translateY(-140%)', transition: '.5s ease-in-out' }}>
+        <div id="sidebar" className="sidebar-div" style={{transform: isOpen ? 'translateY(100%)' : 'translateY(-140%)', transition: '.5s ease-in-out', backgroundColor: isDark ? '' : 'rgb(157, 141, 241)' }}>
             {/*<SidebarLink className="top-links" to="about" onClick={openLink}>About</SidebarLink>
             <SidebarLink className="top-links" to="education" onClick={openLink}>Education</SidebarLink>*/}
             <SidebarLink className="top-links" to="projects" onClick={openLink}>Projects</SidebarLink>

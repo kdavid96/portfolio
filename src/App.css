@@ -11,7 +11,10 @@ html, body{
   scroll-behavior: smooth;
   scrollbar-color: #01bf71 grey;
   scrollbar-width: thin;
-  background-color: rgb(8, 12, 31);
   overflow-x: hidden;
   position: relative;
+}
+
+#home{
+  background-color: rgb(8, 12, 31);
 }

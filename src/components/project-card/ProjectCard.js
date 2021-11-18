@@ -102,69 +102,50 @@ export const ProjectCard = (props) => {
 
     if (isLoading || languages[1] == 'Infinity') {
         return( 
-        <div className="project-card-no-hover">
-            <div className="project-card">
-                <a className="card-link" target="_blank" key={props.id}>
-                            <h1 className="card-title">{props.name}</h1>
-                            <p className="card-desc">{props.desc}</p>
-                            <p className="card-techstack">{props.techstack}</p>
-                            <p className="card-date">{props.date}</p>
-                            <div className="buttons">
-                                <Button href="liveversion" target="_blank">Live Version</Button>
-                                <Button href={link} target="_blank">See Code</Button>
-                            </div>
-                    <div className="loader">
-                        <ThreeHorseLoading size={'large'} style={{position: 'relative', left: '50%'}}/>
-                    </div>
-                </a>
-                <div className="project-card-hover">
-                    <p>HOVER</p>
-                </div>
-            </div>
-        </div>
-        )}else{
-        return (
-            <div className="project-card-no-hover" key={props.id} style={{backgroundColor: '#04060f'}}>
-                <div className="project-card" key={props.id} style={{backgroundColor: 'transparent'}}>
-                    <a /*href={link} target="_blank"*/ className="card-link">
+        <div className="project-card">
+            <a className="card-link" target="_blank" key={props.id}>
                         <h1 className="card-title">{props.name}</h1>
                         <p className="card-desc">{props.desc}</p>
                         <p className="card-techstack">{props.techstack}</p>
                         <p className="card-date">{props.date}</p>
-                        <div className="button-notation-container">
                         <div className="buttons">
-                            {props.live.length > 0 ?
-                                <Button href={props.live} target="_blank">Live Version</Button>
-                                :
-                                <br/>
-                            }
+                            <Button href="liveversion" target="_blank">Live Version</Button>
                             <Button href={link} target="_blank">See Code</Button>
                         </div>
-                        {languages.length > 0 ? (
-                            <>
-                            {/*<ProgressBar min={0} max={100} className="card-progress">
-                                {renderProgressBar()}
-                            </ProgressBar>
-                            <div className="notation">
-                                {renderNotations()}
-                            </div>*/}
-                            <div className="technology-notations">
-                                {languages.map((language, index) => index % 2 === 0 ? <span className="technology-notation">{language}</span> : '')}
-                            </div>
-                            </>
-                        ) : (
-                            <>
-                                {/*<ProgressBar className="card-progress">
-                                    <ProgressBar style={{height: "400%"}} min={0} max={100} variant="info" now={0} label={`${sum}%`}/>
-                                </ProgressBar>*/}
-                                <p className="empty">My GitHub repository is empty ❌</p>
-                            </>
-                        )}
-                        </div>
-                    </a>
-                    <div className="project-card-hover">
-                        <img className="card-image" alt="img" src="./img/portfolio.png"></img>
+                <div className="loader">
+                    <ThreeHorseLoading size={'large'} style={{position: 'relative', left: '50%'}}/>
+                </div>
+            </a>
+        </div>
+        )}else{
+        return (
+            <div className="project-card" key={props.id} style={{backgroundColor: props.isDark ? props.theme.cardDark : props.theme.cardLight}}>
+                <div className="card-header">
+                    <h1 className="card-title" style={{color: props.isDark ? props.theme.textDark : props.theme.textLight}}>{props.name}</h1>
+                    <p className="card-date" style={{color: props.isDark ? props.theme.textDark : props.theme.textLight}}>{props.date}</p>
+                </div>
+                <p className="card-desc" style={{color: props.isDark ? props.theme.textDark : props.theme.textLight}}>{props.desc}</p>
+                <p className="card-techstack" style={{color: props.isDark ? props.theme.textDark : props.theme.textLight}}>{props.techstack}</p>
+                <div className="button-notation-container">
+                <div className="buttons">
+                    {props.live.length > 0 ?
+                        <Button href={props.live} target="_blank">Live Version</Button>
+                        :
+                        <br/>
+                    }
+                    <Button href={link} target="_blank">See Code</Button>
+                </div>
+                {languages.length > 0 ? (
+                    <>
+                    <div className="technology-notations">
+                        {languages.map((language, index) => index % 2 === 0 ? <span className="technology-notation">{language}</span> : '')}
                     </div>
+                    </>
+                ) : (
+                    <>
+                        <p className="empty">My GitHub repository is empty ❌</p>
+                    </>
+                )}
                 </div>
             </div>
     

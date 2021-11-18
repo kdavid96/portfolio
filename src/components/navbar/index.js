@@ -1,13 +1,16 @@
-import React, {useState, useEffect} from 'react'
-import Fade from 'react-reveal/Fade';
-import cv from '../../cv.pdf';
-import { links } from '../../Data'
-import { Sidebar } from '../sidebar';
-import ProgressBar from "react-scroll-progress-bar";
-import { Sling } from 'hamburger-react';
 import './Navbar.css';
 
-export const Navbar = ({ isOpen, setOpen }) => {
+import React, {useEffect, useState} from 'react'
+
+import Fade from 'react-reveal/Fade';
+import ProgressBar from "react-scroll-progress-bar";
+import { Sidebar } from '../sidebar';
+import { Sling } from 'hamburger-react';
+import ToggleButton from './ToggleButton';
+import cv from '../../cv.pdf';
+import { links } from '../../Data'
+
+export const Navbar = ({ isOpen, setOpen, isDark, setDark }) => {
   const [scrollPosition, setScrollPosition] = useState(0);
     const handleScroll = () => {
         const position = window.pageYOffset;
@@ -43,29 +46,30 @@ export const Navbar = ({ isOpen, setOpen }) => {
   }
     return (
       <>
-      <nav className="navbar sticky" style={{backgroundColor: isActive ? 'rgba(4, 6, 15, 1)' : 'rgba(4, 6, 15, 1)'}}>
+      <nav className={"navbar sticky"} style={{backgroundColor: isDark ? '#03040B' : '#9D8DF1'}}>
         <Fade top>
-            <a href="navLink" onClick={handleClick} style={{position: 'relative', left: '5vw'}}><img className="favicon-header" src="./favicon.png" alt="logo"/></a>
-            <Sling toggled={isOpen} onToggle={toggled => {
-              setOpen(!isOpen);
-              }} rounded color="#fff" className="hamburger"/>
-            {/*<Bars isOpen={isOpen} onClick={() => setOpen(!isOpen)} />*/}
+            <a href="navLink" onClick={handleClick}><img className="favicon-header" src="./favicon.png" alt="logo"/></a>
             <div className="links">
               {links.map((link)=>{
                 if(link.url === '#cv'){
-                  return <a className="navLink" href={cv} key={link.id} target="_blank" rel="noreferrer" ref={React.createRef()}>{link.text}</a>
+                  return <a className={isDark ? "navLink" : "navLinkDark"} href={cv} key={link.id} target="_blank" rel="noreferrer" ref={React.createRef()}>{link.text}</a>
                 }
                 else{
-                  return <a className="navLink" href={link.url} key={link.id} onClick={handleClick} ref={React.createRef()}>{link.text}</a>
+                  return <a className={isDark ? "navLink" : "navLinkDark"} href={link.url} key={link.id} onClick={handleClick} ref={React.createRef()}>{link.text}</a>
                 }
               })}
-            </div>
+            <ToggleButton  isDark={isDark} setDark={setDark} />
+            <Sling toggled={isOpen} onToggle={toggled => {
+            setOpen(!isOpen);
+            }} rounded color="#fff" className="hamburger"/>
+          {/*<Bars isOpen={isOpen} onClick={() => setOpen(!isOpen)} />*/}
+          </div>
           </Fade>
           <div className="progress-bar">
-            <ProgressBar bgcolor="#00cc83" className="progress-bar"/>
+            <ProgressBar bgcolor={isDark ? "#00cc83" : "red"} className="progress-bar"/>
           </div>
       </nav>
-      <Sidebar isOpen={isOpen} setOpen={setOpen}/>
+      <Sidebar isOpen={isOpen} setOpen={setOpen} isDark={isDark}/>
       </>
     )
 }

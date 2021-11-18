@@ -16,6 +16,7 @@ a:hover{
     background-color: rgb(8, 12, 31);
     color: white;
     z-index: 0;
+    max-width: 100% !important;
 }
 
 .container.home{
@@ -28,12 +29,16 @@ a:hover{
     color: white;
 }
 
+.container-dark{
+    color: rgb(8, 12, 31);
+    background-color: transparent !important;
+}
 .projects{
     display: flex;
     justify-content: center;
     align-content: center;
     position: relative;
-    min-height: 1600px;
+    min-height: 1300px;
     height: auto;
     color: white;
     overflow: hidden;
@@ -47,7 +52,7 @@ a:hover{
     width: 100%;
     height: 35%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .education-container{
@@ -73,7 +78,6 @@ a:hover{
 
 .wave{
     position: absolute;
-    top: 1.2vh;
     animation: wave_animation 2s ease-in-out infinite;
 }
 
@@ -96,7 +100,7 @@ a:hover{
 
 .content{
     position: absolute;
-    height: 70vh;
+    min-height: 70vh;
     width: 100vw;
     background-color: transparent;
     padding: 15px 15px 15px 15px;
@@ -118,10 +122,12 @@ body{
 }
 
 .top-page-content{
-    margin-left: 15vw;
-    margin-right: 15vw;
     cursor:default;
     display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    top: 10vh;
 }
 
 .robo{
@@ -138,6 +144,7 @@ body{
     text-transform: uppercase;
     padding-left: .5rem;
     font-size: 5rem;
+    font-weight: 1000;
 }
 
 .text{
@@ -164,25 +171,27 @@ body{
 .top-page-image-div{
     /*background: linear-gradient(45deg, #6666ff, #0099ff , #00e1ff, #ff3399, #6666ff);*/
     position: relative;
-    left: 15vw;
 }
 
 .top-page-image{
     position: relative;
+    width: 12.5vw;
     height: auto;
-    width: 80%;
-    left: 10%;
     border-radius: 0;
 }
 
 .background-outline{
-    width: 268px;
-    height: 254px;
+    width: 15vw;
+    height: 15vw;
     background: linear-gradient(-45deg, #6666ff, #0099ff , #00e1ff, #ff3399, #6666ff);
     background-size: 400% 400%;
     color: transparent;
     animation: outline_animation 6s ease-in-out infinite;
     left: 15rem;
+    border-radius: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @keyframes rainbow_animation {
@@ -338,23 +347,20 @@ li > h2, li > p{
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    margin: 15rem 0;
     row-gap: 25px;
     align-content: flex-end;
     justify-content: center;
-    padding: 0 25vw 0 25vw;
 }
 
 .card-container li{
-    left: -25vw;
-    top: -20vh;
-    padding: 0 15px;
-    display: grid;
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
 
 .project-card{
     width: 75vw;
-    height: min(50vw, 300px);
+    height: auto;
     margin: 0 0 0 0;
     padding: 20px 20px 20px 20px;
     border-radius: 15px;
@@ -362,13 +368,11 @@ li > h2, li > p{
     color:black;
     cursor: pointer;
     position: relative;
-    top: -2vh;
-    left: -1.5vw;
 }
 
 .project-card-no-hover{
     width: 75vw;
-    height: min(50vw, 300px);
+    height: min(50vw, 400px);
     margin: 0 0 0 0;
     padding: 20px 20px 20px 20px;
     border-radius: 15px;
@@ -377,11 +381,6 @@ li > h2, li > p{
     cursor: pointer;
     transition: height 1.5s ease-in-out;
 }
-
-/*.project-card-no-hover:hover{
-    height: min(100vw, 600px);
-    transition: 1.5s ease-in-out;
-}*/
 
 .card-link{
     position: absolute;
@@ -395,9 +394,36 @@ li > h2, li > p{
     transition: width 1.5s ease-in-out;
 }
 
+.card-header{
+    display: grid;
+    justify-content: space-evenly;
+    grid-template-columns: 75% 25%;
+    background-color: transparent;
+    margin-bottom: 2vh;
+}
+
 .card-title{
     font-size: 1.5rem;
     padding-left: 1rem;
+    margin: 0;
+    padding-bottom: 0;
+    grid-column: 1;
+    text-align: left;
+}
+
+.card-date{
+    font-size: .8rem;
+    padding-left: 1rem;
+    margin: 0;
+    padding-bottom: 0;
+    grid-column: 2;
+}
+
+.card-divider{
+    display: block;
+    width: 100%;
+    border-bottom: 3px solid rgb(152, 240, 255);
+    border-radius: 25px;
 }
 
 .card-desc{
@@ -409,13 +435,6 @@ li > h2, li > p{
     font-weight: 800;
     font-style: italic;
     text-align: right;
-}
-
-.card-date{
-    position: absolute;
-    left: 65vw;
-    top: 2vh;
-    font-size: .8rem;
 }
 
 .card-progress{
@@ -458,21 +477,6 @@ li > h2, li > p{
     background-color: transparent !important;
 }
 
-.project-card-hover{
-    display: none;
-    position: relative;
-    width: 40vw;
-    height: auto;
-    top: 20vh;
-    left: 15vw;
-    color: white;
-    transition: top 1.5s ease-in-out .8s;
-}
-
-/*.project-card-no-hover:hover .project-card-hover{
-    display: block;
-    transition: 2s ease-in-out;
-}*/
 .empty{
     position: relative;
     color: white;
@@ -489,11 +493,6 @@ li > h2, li > p{
     transition: transfrom 1.5s ease-in-out;
 }
 
-.project-card-no-hover:hover .card-image{
-    transform: translateY(0deg);
-    transition: 1.5s ease-in-out;
-}
-
 .footer{
     top: 30vh;
     position: relative;
@@ -501,8 +500,7 @@ li > h2, li > p{
     height: 20vh;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin-left: 10%;
+    justify-content: center;
 }
 
 .link-footer{
@@ -542,7 +540,7 @@ li > h2, li > p{
 .socials{
     display: flex;
     width: 75%;
-    justify-content: space-around;
+    justify-content: space-evenly;
     text-align: right;
 }
 
@@ -550,7 +548,7 @@ li > h2, li > p{
     position: fixed;
     width: 100vw;
     height: 10vh;
-    background-color: rgb(4, 6, 15);
+    background-color: #03040B;
     display: flex;
     justify-content: center;
     align-content: center;
@@ -585,6 +583,8 @@ li > h2, li > p{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
 }
 
 .technology-notation{
@@ -597,11 +597,12 @@ li > h2, li > p{
     margin-right: 10px;
     margin-bottom: 10px;
     border: 2px solid #01BF71;
+    height: 38px;
 }
 
 @media only screen and (max-width: 1470px) {
-    .top-page-image-div{
-        display: none;
+    .top-page-content{
+        flex-direction: column;
     }
 }
 
@@ -633,10 +634,13 @@ li > h2, li > p{
         flex-direction: column;
         justify-content: space-between;
         height: 100px;
-        left: -10px;
         margin: 0;
         position: relative;
         padding-bottom: 10px;
+    }
+
+    .projects{
+        min-height: 1725px;
     }
 
     .empty{
@@ -654,26 +658,26 @@ li > h2, li > p{
         height: auto;
     }
 
-    .project-card-no-hover{
-        width: 96vw;
-        height: 50vh !important;
-    }
-
     .card-link{
         width: 95vw;
     }
 
     .card-container li{
-        left: -36.5vw;
+        padding: 0 7.5px;
     }
 
     .card-container{
-        grid-template-columns: 1fr;
-        overflow: visible;
+        width: 100%;
+        left: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
-    .project-card-no-hover{
-        height: 35vh;
+    .card-container li{
+        left: 0;
     }
 
     .notation {
@@ -682,14 +686,12 @@ li > h2, li > p{
         top: 15vh;
     }
 
-    .buttons{
-    }
-
     .button-notation-container{
         width: 97%;
-        left: 6%;
+        left: 2%;
         flex-direction: column;
         height: 150px;
+        position: relative;
     }
 
     .card-progress {
@@ -701,14 +703,10 @@ li > h2, li > p{
     }
 
     .project-card{
-        width: 75vw;
+        width: 95vw;
         height: fit-content;
         border-radius: 15px;
         transition: 1s ease-in-out;
-    }
-
-    .technology-notations{
-        width: 50%;
     }
 
     ul{
@@ -758,9 +756,6 @@ li > h2, li > p{
 }
 
 @media only screen and (max-width: 550px){
-    .buttons{
-    }
-    
     .top-page-content{
         margin-left: 0;
         transition: 1s ease-in-out;
@@ -768,15 +763,6 @@ li > h2, li > p{
 }
 
 @media only screen and (max-width: 500px){
-    .card-container{
-        left: 7vw;
-    }
-    
-    .socials{
-        display: grid;
-        grid-gap: 1rem;
-    }
-
     .graduation-hat{
         display: none;
     }

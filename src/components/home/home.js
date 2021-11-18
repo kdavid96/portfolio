@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import '../style.css'
+
+import React, { useEffect, useState } from 'react'
+
 import Fade from 'react-reveal/Fade';
 import { TechnologyList } from '../home/Technologylist';
-import '../style.css' 
-export const Home = () => {
+
+export const Home = ({isDark, theme}) => {
     const [scrollPosition, setScrollPosition] = useState(0);
     const handleScroll = () => {
         const position = window.pageYOffset;
@@ -20,7 +23,7 @@ export const Home = () => {
     var isActive = false;
     if(scrollPosition < 860){isActive = true}
     return (
-        <div className={`container home ${isActive ? "container-focus" : "" }`} id="home">
+        <div className={`container home ${isActive ? "container-focus" : "" }  ${!isDark ? "container-dark" : "" }`} id="home">
             <Fade bottom>
                 <div className="content">
                     <div className="top-page-content">
@@ -36,7 +39,7 @@ export const Home = () => {
                         </div>
                     </div>
                     <div className="technology-container">
-                            {TechnologyList.map((data) => <li className="technology-card" key={data.id}><img className="technology-image" alt={data.name} src={data.img}></img></li>)}
+                            {TechnologyList.map((data) => <li className="technology-card"  style={{backgroundColor: isDark ? theme.cardDark : theme.cardLight}} key={data.id}><img className="technology-image" alt={data.name} src={data.img}></img></li>)}
                     </div>
                 </div>
             </Fade>
