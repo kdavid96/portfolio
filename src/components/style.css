@@ -500,7 +500,7 @@ li > h2, li > p{
     height: 20vh;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .link-footer{

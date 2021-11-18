@@ -60,15 +60,12 @@ export const Contact = ({isDark}) => {
             </Fade>
             <Fade bottom>
                 <div className="footer">
-                    <p className="copyright-footer">Copyright &copy; 2021</p>
-                    <div className="socials">
                         <IconContext.Provider value={{size: '1.2em', className: "github-icon" }}>
                             <a style={{color: isDark ? '' : 'black'}} href="https://www.github.com/kdavid96" target="_blank" className="link-footer"><GrGithub /> GitHub</a>
                         </IconContext.Provider>
                         <IconContext.Provider value={{size: '1.2em', className: "linkedin-icon" }}>
                             <a style={{color: isDark ? '' : 'black'}} href="https://www.linkedin.com/in/d%C3%A1vid-kopp%C3%A1ny-580449205/" target="_blank" className="link-footer"><GrLinkedin />LinkedIn</a>
                         </IconContext.Provider>
-                    </div>
                 </div>
             </Fade>
         </div>
