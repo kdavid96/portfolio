@@ -510,6 +510,7 @@ li > h2, li > p{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    top: 125px;
 }
 
 .link-footer{
@@ -804,7 +805,7 @@ li > h2, li > p{
     }
 
     .projects{
-        min-height: 1700px;
+        min-height: 1790px;
     }
     
     .card-header{
@@ -825,7 +826,7 @@ li > h2, li > p{
 
 @media only screen and (max-width: 300px) {
     .technology-notations{
-        display: block;
+        display: none;
     }
 
     .button-notation-container{
@@ -833,6 +834,6 @@ li > h2, li > p{
     }
 
     .projects{
-        min-height: 1930px;
+        min-height: 2000px;
     }
 }

@@ -25,14 +25,12 @@ export const Projects = ({isDark, theme}) => {
     if(scrollPosition >= 2575 && scrollPosition < 3350){isActive = true}
     return (
         <div className={`projects ${isActive ? "container-focus" : "" }`} id="projects">
-            <Fade bottom>
-                <div className="content">
-                    <h1 style={{marginTop: 50 + 'px', color: isDark ? theme.textDark : theme.textLight}}>Projects</h1>
-                    <ul className="card-container">
-                        {ProjectList.map((data) => <Fade left><li key={data.id}><ProjectCard name={data.name} desc={data.desc} techstack={data.techstack} date={data.date} img={data.img} repo_name={data.repo_name} id={data.id} live={data.live} isDark={isDark} theme={theme}/></li></Fade>)}
-                    </ul>                    
-                </div>
-            </Fade>
+            <div className="content">
+                <h1 style={{marginTop: 50 + 'px', color: isDark ? theme.textDark : theme.textLight}}>Projects</h1>
+                <ul className="card-container">
+                    {ProjectList.map((data) => <Fade left><li key={data.id}><ProjectCard name={data.name} desc={data.desc} techstack={data.techstack} date={data.date} img={data.img} repo_name={data.repo_name} id={data.id} live={data.live} isDark={isDark} theme={theme}/></li></Fade>)}
+                </ul>                    
+            </div>
         </div>
     )
 }
