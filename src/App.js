@@ -14,12 +14,12 @@ function App() {
   const [isDark, setDark] = useState(true);
   const Theme = {
     cardDark: '#03040B',
-    cardLight: 'rgb(91, 125, 196)',
+    cardLight: 'rgb(169, 215, 255)',
     textDark: 'white',
     textLight: 'black'
   }
   return (
-    <main id="outerHome" style={{backgroundColor: isDark ? 'rgb(8,12,31)' : '#B8CDF8'}}> 
+    <main id="outerHome" style={{backgroundColor: isDark ? 'rgb(8,12,31)' : 'rgb(255, 255, 255)'}}> 
       <Navbar isOpen={isOpen} setOpen={setOpen} isDark={isDark} setDark={setDark} theme={Theme} />
       <Home isDark={isDark} theme={Theme} />
       <Projects isDark={isDark} theme={Theme} />

@@ -42,8 +42,8 @@ export const Contact = ({isDark}) => {
     var isActive = false;
     if(scrollPosition >= 3430){isActive = true}
     return (
-        <div className={`container contact ${isActive ? "container-focus prevent-scroll" : "" } ${!isDark ? "container-dark" : ''}`} id="contact">
-            <Fade bottom>
+        <Fade bottom>
+            <div className={`container contact ${isActive ? "container-focus prevent-scroll" : "" } ${!isDark ? "container-dark" : ''}`} id="contact">
                 <div className="contact-box content">
                     <h1 className="contact-title">Contact Me ✉️</h1>
                     <form id="contact-form" ref={form} onSubmit={handleSubmit(sendEmail)}>
@@ -56,18 +56,16 @@ export const Contact = ({isDark}) => {
                         <input type="submit" value="Send" className="submit-button"/>
                         {<p id="success-message" className="success-message">Your message has been sent! I'll get back to you as soon as possible.</p>}
                     </form>
+                    <div className="footer">
+                            <IconContext.Provider value={{size: '1.2em', className: "github-icon" }}>
+                                <a style={{color: isDark ? '' : 'black'}} href="https://www.github.com/kdavid96" target="_blank" className="link-footer"><GrGithub /> GitHub</a>
+                            </IconContext.Provider>
+                            <IconContext.Provider value={{size: '1.2em', className: "linkedin-icon" }}>
+                                <a style={{color: isDark ? '' : 'black'}} href="https://www.linkedin.com/in/d%C3%A1vid-kopp%C3%A1ny-580449205/" target="_blank" className="link-footer"><GrLinkedin />LinkedIn</a>
+                            </IconContext.Provider>
+                    </div>
                 </div>
-            </Fade>
-            <Fade bottom>
-                <div className="footer">
-                        <IconContext.Provider value={{size: '1.2em', className: "github-icon" }}>
-                            <a style={{color: isDark ? '' : 'black'}} href="https://www.github.com/kdavid96" target="_blank" className="link-footer"><GrGithub /> GitHub</a>
-                        </IconContext.Provider>
-                        <IconContext.Provider value={{size: '1.2em', className: "linkedin-icon" }}>
-                            <a style={{color: isDark ? '' : 'black'}} href="https://www.linkedin.com/in/d%C3%A1vid-kopp%C3%A1ny-580449205/" target="_blank" className="link-footer"><GrLinkedin />LinkedIn</a>
-                        </IconContext.Provider>
-                </div>
-            </Fade>
-        </div>
+            </div>
+        </Fade>
     )
 }

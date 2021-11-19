@@ -12,7 +12,7 @@ a:hover{
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 90vh;
+    min-height: 100vh;
     background-color: rgb(8, 12, 31);
     color: white;
     z-index: 0;
@@ -299,9 +299,19 @@ li > h2, li > p{
     overflow: hidden;
 }
 
+.contact-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 #contact-form{
     position: relative;
-    left: 16.5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #contact-form label{
@@ -494,7 +504,6 @@ li > h2, li > p{
 }
 
 .footer{
-    top: 30vh;
     position: relative;
     width: 100vw;
     height: 20vh;
@@ -590,14 +599,11 @@ li > h2, li > p{
 .technology-notation{
     color: white;
     background-color: #01BF71;
-    padding: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: .25rem .25rem;
     border-radius: 10px;
     margin-right: 10px;
-    margin-bottom: 10px;
     border: 2px solid #01BF71;
-    height: 38px;
+    height: 2.5rem;
 }
 
 @media only screen and (max-width: 1470px) {
@@ -640,7 +646,7 @@ li > h2, li > p{
     }
 
     .projects{
-        min-height: 1725px;
+        min-height: 1810px;
     }
 
     .empty{
@@ -706,7 +712,6 @@ li > h2, li > p{
         width: 95vw;
         height: fit-content;
         border-radius: 15px;
-        transition: 1s ease-in-out;
     }
 
     ul{
@@ -726,7 +731,6 @@ li > h2, li > p{
     }
 
     #contact-form{
-        left: 5vw;
         width: 90vw;
     }
 
@@ -738,6 +742,10 @@ li > h2, li > p{
 @media only screen and (max-width: 765px) {
     .favicon-header{
         left: 5vw !important;
+    }
+
+    .top-page-image-div{
+        display: none;
     }
 }
 
@@ -787,5 +795,44 @@ li > h2, li > p{
         left: -10%;
         width: auto;
         margin-top: 5px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .title{
+        font-size: 20vw;
+    }
+
+    .projects{
+        min-height: 1700px;
+    }
+    
+    .card-header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card-date{
+        display: none;
+    }
+
+    .card-title{
+        text-align: center;
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    .technology-notations{
+        display: block;
+    }
+
+    .button-notation-container{
+        margin-top: 35px;
+    }
+
+    .projects{
+        min-height: 1930px;
     }
 }

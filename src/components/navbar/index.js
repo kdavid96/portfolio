@@ -46,7 +46,7 @@ export const Navbar = ({ isOpen, setOpen, isDark, setDark }) => {
   }
     return (
       <>
-      <nav className={"navbar sticky"} style={{backgroundColor: isDark ? '#03040B' : '#9D8DF1'}}>
+      <nav className={"navbar sticky"} style={{backgroundColor: isDark ? '#03040B' : 'rgb(91, 125, 196)'}}>
         <Fade top>
             <a href="navLink" onClick={handleClick}><img className="favicon-header" src="./favicon.png" alt="logo"/></a>
             <div className="links">
@@ -66,7 +66,7 @@ export const Navbar = ({ isOpen, setOpen, isDark, setDark }) => {
           </div>
           </Fade>
           <div className="progress-bar">
-            <ProgressBar bgcolor={isDark ? "#00cc83" : "red"} className="progress-bar"/>
+            <ProgressBar bgcolor={isDark ? "#00CC83" : "#0B5ED7"} className="progress-bar"/>
           </div>
       </nav>
       <Sidebar isOpen={isOpen} setOpen={setOpen} isDark={isDark}/>
