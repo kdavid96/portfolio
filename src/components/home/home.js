@@ -23,7 +23,7 @@ export const Home = ({isDark, theme}) => {
     var isActive = false;
     if(scrollPosition < 860){isActive = true}
     return (
-        <div className={`container home ${isActive ? "container-focus" : "" }  ${!isDark ? "container-dark" : "" }`} id="home">
+        <div className={`container home ${isActive ? "container-focus" : "" }  ${!isDark ? "container-dark" : "" }`} id="home" style={{top: '10vh'}}>
             <Fade bottom>
                 <div className="content">
                     <div className="top-page-content">
@@ -39,7 +39,7 @@ export const Home = ({isDark, theme}) => {
                         </div>
                     </div>
                     <div className="technology-container">
-                            {TechnologyList.map((data) => <li className="technology-card"  style={{backgroundColor: isDark ? theme.cardDark : theme.cardLight}} key={data.id}><img className="technology-image" alt={data.name} src={data.img}></img></li>)}
+                            {TechnologyList.map((data) => <Fade delay={100} bottom><li className="technology-card"  style={{backgroundColor: isDark ? theme.cardDark : theme.cardLight}} key={data.id}><img className="technology-image" alt={data.name} src={data.img}></img></li></Fade>)}
                     </div>
                 </div>
             </Fade>

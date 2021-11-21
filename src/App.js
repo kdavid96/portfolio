@@ -19,7 +19,7 @@ function App() {
     textLight: 'black'
   }
   return (
-    <main id="outerHome" style={{backgroundColor: isDark ? 'rgb(8,12,31)' : 'rgb(255, 255, 255)'}}> 
+    <main id="outerHome" style={{backgroundColor: isDark ? 'rgb(8,12,31)' : 'rgb(230, 246, 255)'}}> 
       <Navbar isOpen={isOpen} setOpen={setOpen} isDark={isDark} setDark={setDark} theme={Theme} />
       <Home isDark={isDark} theme={Theme} />
       <Projects isDark={isDark} theme={Theme} />

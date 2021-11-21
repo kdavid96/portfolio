@@ -2,6 +2,7 @@ import '../style.css';
 
 import React, { useEffect, useState }  from 'react';
 
+import Fade from 'react-reveal/Fade';
 import Button from 'react-bootstrap/Button';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import { ThreeHorseLoading } from 'react-loadingg';
@@ -103,49 +104,53 @@ export const ProjectCard = (props) => {
     if (isLoading || languages[1] == 'Infinity') {
         return( 
         <div className="project-card">
-            <a className="card-link" target="_blank" key={props.id}>
-                        <h1 className="card-title">{props.name}</h1>
-                        <p className="card-desc">{props.desc}</p>
-                        <p className="card-techstack">{props.techstack}</p>
-                        <p className="card-date">{props.date}</p>
-                        <div className="buttons">
-                            <Button href="liveversion" target="_blank">Live Version</Button>
-                            <Button href={link} target="_blank">See Code</Button>
-                        </div>
+            <span className="card-link" target="_blank" key={props.id}>
+                <h1 className="card-title">{props.name}</h1>
+                <p className="card-desc">{props.desc}</p>
+                <p className="card-techstack">{props.techstack}</p>
+                <p className="card-date">{props.date}</p>
+                <div className="buttons">
+                    <Button href="liveversion" target="_blank">Live Version</Button>
+                    <Button href={link} target="_blank">See Code</Button>
+                </div>
                 <div className="loader">
                     <ThreeHorseLoading size={'large'} style={{position: 'relative', left: '50%'}}/>
                 </div>
-            </a>
+            </span>
         </div>
         )}else{
         return (
-            <div className="project-card" key={props.id} style={{backgroundColor: props.isDark ? props.theme.cardDark : props.theme.cardLight}}>
-                <div className="card-header">
-                    <h1 className="card-title" style={{color: props.isDark ? props.theme.textDark : props.theme.textLight}}>{props.name}</h1>
-                    <p className="card-date" style={{color: props.isDark ? props.theme.textDark : props.theme.textLight}}>{props.date}</p>
-                </div>
-                <p className="card-desc" style={{color: props.isDark ? props.theme.textDark : props.theme.textLight}}>{props.desc}</p>
-                <p className="card-techstack" style={{color: props.isDark ? props.theme.textDark : props.theme.textLight}}>{props.techstack}</p>
-                <div className="button-notation-container">
-                <div className="buttons">
-                    {props.live.length > 0 ?
-                        <Button href={props.live} target="_blank">Live Version</Button>
-                        :
-                        <br/>
-                    }
-                    <Button href={link} target="_blank">See Code</Button>
+            <div className="project-card" key={props.id} style={{backgroundColor: 'transparent'}}>
+                <div className="card-header-own">
+                    <Fade delay={400} left><h1 className="card-title">{props.name}</h1></Fade>
+                    <Fade delay={400} right><p className="card-date" style={{color: props.isDark ? props.theme.textDark : props.theme.textLight}}>0{props.id}</p></Fade>
                 </div>
                 {languages.length > 0 ? (
                     <>
-                    <div className="technology-notations">
-                        {languages.map((language, index) => index % 2 === 0 ? <span className="technology-notation">{language}</span> : '')}
-                    </div>
+                    <Fade delay={800} bottom><div className="technology-notations">
+                        {languages.map((language, index) => index % 2 === 0 ? <li className="technology-notation" style={{color: props.isDark ? props.theme.textDark : props.theme.textLight}}>{language}</li> : '')}
+                    </div></Fade>
                     </>
                 ) : (
                     <>
-                        <p className="empty">My GitHub repository is empty ❌</p>
+                        <Fade delay={800} top><p className="empty">My GitHub repository is empty ❌</p></Fade>
                     </>
                 )}
+                <div className="project-body">
+                    <div className="image-side">
+                        <Fade delay={1000} bottom><p className="card-desc" style={{color: props.isDark ? props.theme.textDark : props.theme.textLight}}>{props.desc}</p></Fade>
+                        <Fade delay={1200} bottom><div className="button-notation-container">
+                            <div className="buttons">
+                                {props.live.length > 0 ?
+                                    <Button className="project-button" href={props.live} target="_blank">Live Version</Button>
+                                    :
+                                    <br/>
+                                }
+                                <Button className="project-button" href={link} target="_blank">See Code</Button>
+                            </div>
+                        </div></Fade>
+                    </div>
+                    <Fade delay={600} right><div className="project-image"><img src={props.img} alt={props.name + 1}></img></div></Fade>
                 </div>
             </div>
     

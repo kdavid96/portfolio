@@ -12,7 +12,6 @@ a:hover{
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
     background-color: rgb(8, 12, 31);
     color: white;
     z-index: 0;
@@ -21,7 +20,6 @@ a:hover{
 
 .container.home{
     position: relative;
-    overflow: hidden !important;
 }
 
 .container.education, .container.projects, .container.about{
@@ -33,18 +31,21 @@ a:hover{
     color: rgb(8, 12, 31);
     background-color: transparent !important;
 }
-.projects{
+
+#projects{
+    width: 75%;
+    left: 12.5%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-content: center;
-    position: relative;
-    min-height: 1300px;
-    height: auto;
-    color: white;
-    overflow: hidden;
+    align-items: flex-start;
 }
 
 .buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
     transition: opacity 1.5s ease-in-out .8s;
 }
 
@@ -52,7 +53,8 @@ a:hover{
     width: 100%;
     height: 35%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
+    margin-left: 10px;
 }
 
 .education-container{
@@ -99,8 +101,7 @@ a:hover{
 }
 
 .content{
-    position: absolute;
-    min-height: 70vh;
+    position: relative;
     width: 100vw;
     background-color: transparent;
     padding: 15px 15px 15px 15px;
@@ -127,7 +128,12 @@ body{
     justify-content: space-evenly;
     align-items: center;
     position: relative;
-    top: 10vh;
+    width: 75%;
+    left: 12.5%;
+}
+
+#home{
+    height: 80vh;
 }
 
 .robo{
@@ -148,7 +154,7 @@ body{
 }
 
 .text{
-    text-align: left;
+    text-align: center;
 }
 
 .rainbow_text_animated, .rainbow_text_animated:hover {
@@ -161,11 +167,13 @@ body{
     cursor: default;
 }
 
+.submit-button{
+    background-color:rgb(0, 221, 111);
+    font-weight: 400;
+}
+
 .submit-button:hover{
     cursor: pointer;
-    background: linear-gradient(45deg, white, white , #00e1ff, #ff3399, #6666ff);
-    animation: rainbow_animation 6s ease-in-out infinite;
-    background-size: 400% 100%
 }
 
 .top-page-image-div{
@@ -219,9 +227,10 @@ body{
 .technology-container{
     display: flex;
     flex-direction: row;
-    margin-top: 15vh;
+    margin-top: 5vh;
     cursor: default;
-    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .technology-card{
@@ -230,7 +239,6 @@ body{
     background-color: #04060F;
     display: inline-flex;
     justify-content: center;
-    margin-right: 17px;
     border-radius: 15px;
 }
 
@@ -252,9 +260,7 @@ body{
 
 ul{
     list-style-type: none;
-    padding-left:   5vw;
-    padding-right: 5vw;
-    padding-top: 5rem;
+    padding: 0;
 }
 
 li{
@@ -281,13 +287,6 @@ li > h2, li > p{
     justify-content: center;
 }
 
-.graduation-hat{
-    position: relative;
-    font-size: 15rem;
-    left: 5vw;
-    top: 10vh;
-}
-
 .sidebar-ul{
     position: relative;
     top: 15vh;
@@ -297,13 +296,27 @@ li > h2, li > p{
 #contact{
     position: relative;
     overflow: hidden;
+    margin-top: 15vh;
 }
 
 .contact-box{
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.contact-contents{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 69vw;
+}
+
+.contact-contents p{
+    text-align: left;
 }
 
 #contact-form{
@@ -319,12 +332,12 @@ li > h2, li > p{
 }
 
 #contact-form input, textarea{
-    width: 65vw;
+    width: 35vw;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: none;
+    border-radius: 24px;
     box-sizing: border-box;
 }
 
@@ -335,7 +348,7 @@ li > h2, li > p{
 
 .error-message{
     color: #d00;
-    width: 65vw;
+    width: 35vw;
     text-align: center;
 }
 
@@ -350,14 +363,19 @@ li > h2, li > p{
     overflow: hidden;
 }
 
+.projects > .content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .card-container{
     position: relative;
     width:80vw;
-    left: 9.5vw;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    row-gap: 25px;
     align-content: flex-end;
     justify-content: center;
 }
@@ -369,10 +387,9 @@ li > h2, li > p{
 }
 
 .project-card{
-    width: 75vw;
     height: auto;
     margin: 0 0 0 0;
-    padding: 20px 20px 20px 20px;
+    padding: 20px 0 20px 0;
     border-radius: 15px;
     background-color: #050511;
     color:black;
@@ -404,26 +421,27 @@ li > h2, li > p{
     transition: width 1.5s ease-in-out;
 }
 
-.card-header{
-    display: grid;
-    justify-content: space-evenly;
-    grid-template-columns: 75% 25%;
-    background-color: transparent;
-    margin-bottom: 2vh;
+.card-header-own{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .card-title{
-    font-size: 1.5rem;
+    font-size: 3rem;
     padding-left: 1rem;
     margin: 0;
     padding-bottom: 0;
-    grid-column: 1;
     text-align: left;
+    color: #01bf71;
 }
 
 .card-date{
-    font-size: .8rem;
-    padding-left: 1rem;
+    font-size: 3rem;
+    box-sizing: border-box;
+    border-bottom: 4px solid #01bf71;
+
     margin: 0;
     padding-bottom: 0;
     grid-column: 2;
@@ -437,8 +455,10 @@ li > h2, li > p{
 }
 
 .card-desc{
-    font-size: 1rem;
-    text-align: center;
+    font-size: 1.3rem;
+    text-align: left;
+    margin-left: 20px;
+    width: 70%;
 }
 
 .card-techstack{
@@ -494,6 +514,55 @@ li > h2, li > p{
     left: 0;
 }
 
+.container-title{
+    text-align: left;
+    padding-bottom: 2rem;
+    text-transform: uppercase;
+    font-size: 5rem;
+    font-weight: 1000;
+    position: relative;
+}
+
+.container-title-cover{
+    background-color: black;
+    color: black;
+    position: absolute;
+    transform-origin: left;
+    animation: slideIn 3s ease-in-out 0s forwards;
+    -moz-animation: slideIn 3s ease-in-out 0s forwards;
+    -webkit-animation: slideIn 3s ease-in-out 0s forwards;
+    -o-animation: slideIn 3s ease-in-out 0s forwards;
+}
+
+.container-title-text{
+    animation: showUp 3s ease-in-out 3s forwards;
+    -moz-animation: showUp 3s ease-in-out 3s forwards;
+    -webkit-animation: showUp 3s ease-in-out 3s forwards;
+    -o-animation: showUp 3s ease-in-out 3s forwards;
+}
+
+@keyframes slideIn{
+    0% {
+        transform: scaleX(0%);
+    }
+    50% {
+        transform: scaleX(100%);
+    }
+    100%{
+        transform-origin: right middle;
+        transform: scaleX(0%);
+    }
+}
+
+@keyframes showUp{
+    0% {
+        display: none;
+    }
+    50%, 100%{
+        display: block;
+    }
+}
+
 .card-image{
     position: relative;
     width: 85%;
@@ -506,11 +575,10 @@ li > h2, li > p{
 .footer{
     position: relative;
     width: 100vw;
-    height: 20vh;
+    height: 5vh;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    top: 125px;
 }
 
 .link-footer{
@@ -593,18 +661,73 @@ li > h2, li > p{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     align-content: center;
+    padding-left: 1rem;
 }
 
 .technology-notation{
     color: white;
-    background-color: #01BF71;
     padding: .25rem .25rem;
-    border-radius: 10px;
-    margin-right: 10px;
-    border: 2px solid #01BF71;
+    margin-right: 25px;
     height: 2.5rem;
+    font-size: 1.3rem;
+}
+
+.card-container li{
+    display: list-item;
+    margin-bottom: 10vh;
+}
+
+.technology-notation:not(:first-child){
+    list-style-type: disc;
+}
+
+.project-button{
+    background-color: #00cc83;
+    border-color: #00cc83;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.project-button:hover{
+    background-color: #13da94;
+    border-color: #13da94;
+}
+
+.project-body{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-image {
+    position: relative;
+}
+
+.project-image img{
+    height: 600px;
+    width: auto;
+    margin-top: -150px;
+}
+
+.images{
+    display: flex;
+    flex-direction: row;
+}
+
+.image-side{
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: first baseline;
 }
 
 @media only screen and (max-width: 1470px) {
@@ -624,28 +747,13 @@ li > h2, li > p{
 }
 
 @media only screen and (max-width: 1064px) {
-    .graduation-hat{
-        font-size: 15rem;
-        top: 15vh;
+
+    .title{
+        text-align: left;
     }
 }
 
 @media only screen and (max-width: 960px){
-
-    #contact{
-        margin-top: 5vh;
-    }
-
-    .buttons{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 100px;
-        margin: 0;
-        position: relative;
-        padding-bottom: 10px;
-    }
-
     .projects{
         min-height: 1810px;
     }
@@ -659,32 +767,84 @@ li > h2, li > p{
     }
 }
 
+@media only screen and (max-width: 880px){
+    .card-desc{
+        font-size: 1.2rem;
+    }
+}
+
 @media only screen and (max-width: 800px){
     .technology-image{
         width: 75%;
         height: auto;
     }
 
-    .card-link{
-        width: 95vw;
-    }
-
-    .card-container li{
-        padding: 0 7.5px;
+    #projects{
+        width: 100%;
+        left: 0;
     }
 
     .card-container{
         width: 100%;
-        left: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
+    }
+
+    .card-link{
+        width: 95vw;
+    }
+
+    .card-header-own{
+        flex-wrap: wrap-reverse !important;
+        flex-flow: row-reverse;
         justify-content: center;
+    }
+
+    .technology-notations{
+        padding: 0;
+        margin-top: 15px;
+        justify-content: center;
+    }
+
+    .card-title{
+        text-align: center;
+    }
+
+    .card-desc{
+        margin: 0;
+        text-align: center;
+        width: 100%;
+        padding-bottom: 10vh;
+        padding-top: 10vh;
+    }
+
+    .image-side{
+        height: auto;
         align-items: center;
     }
 
-    .card-container li{
-        left: 0;
+    .button-notation-container{
+        justify-content: center;
+    }
+
+    .contact-contents{
+        align-items: center;
+    }
+
+    .contact-contents p{
+        width: 100%;
+        text-align: center;
+    }
+
+    .container-title{
+        padding: 0;
+        text-align: center;
+    }
+
+    .project-body{
+        flex-direction: column;
+    }
+
+    .contact-contents{
+        flex-direction: column;
     }
 
     .notation {
@@ -693,12 +853,8 @@ li > h2, li > p{
         top: 15vh;
     }
 
-    .button-notation-container{
-        width: 97%;
-        left: 2%;
-        flex-direction: column;
-        height: 150px;
-        position: relative;
+    #projects{
+        align-items: center;
     }
 
     .card-progress {
@@ -710,7 +866,6 @@ li > h2, li > p{
     }
 
     .project-card{
-        width: 95vw;
         height: fit-content;
         border-radius: 15px;
     }
@@ -728,7 +883,6 @@ li > h2, li > p{
 
     .card-desc{
         position: relative;
-        top: -2vh;
     }
 
     #contact-form{
@@ -762,6 +916,11 @@ li > h2, li > p{
     .empty{
         display: none;
     }
+
+    #projects{
+        width: 100%;
+        left: 0;
+    }
 }
 
 @media only screen and (max-width: 550px){
@@ -769,11 +928,15 @@ li > h2, li > p{
         margin-left: 0;
         transition: 1s ease-in-out;
     }
+
+    .project-image{
+        display: none;
+    }
 }
 
 @media only screen and (max-width: 500px){
-    .graduation-hat{
-        display: none;
+    .card-title{
+        font-size: 2rem;
     }
 
     .card-link{
@@ -797,11 +960,15 @@ li > h2, li > p{
         width: auto;
         margin-top: 5px;
     }
+
+    .contact-contents p{
+        font-size: 1rem;
+    }
 }
 
 @media only screen and (max-width: 400px) {
     .title{
-        font-size: 20vw;
+        font-size: 15vw;
     }
 
     .projects{
@@ -814,12 +981,29 @@ li > h2, li > p{
         align-items: center;
     }
 
-    .card-date{
-        display: none;
+    .card-header-own{
+        flex-direction: column-reverse;
     }
 
     .card-title{
         text-align: center;
+        font-size: 1.5rem;
+        padding: 0;
+    }
+
+    .card-date{
+        border-bottom: none;
+        border-top: 4px solid #01bf71;
+    }
+
+    .technology-notations{
+        flex-direction: column;
+    }
+
+    .card-container li {
+        text-align: center;
+        display: block;
+        margin: 0;
         padding: 0;
     }
 }

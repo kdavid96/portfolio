@@ -24,13 +24,11 @@ export const Projects = ({isDark, theme}) => {
     var isActive = false;
     if(scrollPosition >= 2575 && scrollPosition < 3350){isActive = true}
     return (
-        <div className={`projects ${isActive ? "container-focus" : "" }`} id="projects">
-            <div className="content">
-                <h1 style={{marginTop: 50 + 'px', color: isDark ? theme.textDark : theme.textLight}}>Projects</h1>
-                <ul className="card-container">
-                    {ProjectList.map((data) => <Fade left><li key={data.id}><ProjectCard name={data.name} desc={data.desc} techstack={data.techstack} date={data.date} img={data.img} repo_name={data.repo_name} id={data.id} live={data.live} isDark={isDark} theme={theme}/></li></Fade>)}
-                </ul>                    
-            </div>
+        <div className={`content ${isActive ? "container-focus" : "" }`} id="projects" style={{position: 'relative', top: '20vh'}}>
+            <Fade left><h1 className="container-title title" style={{marginTop: 50 + 'px', color: isDark ? theme.textDark : theme.textLight}}>Projects</h1></Fade>
+            <ul className="card-container">
+                {ProjectList.map((data) => <li key={data.id}><ProjectCard name={data.name} desc={data.desc} techstack={data.techstack} date={data.date} img={data.img} img2={data.imgLaptop} img3={data.imgPC} repo_name={data.repo_name} id={data.id} live={data.live} isDark={isDark} theme={theme}/></li>)}
+            </ul>                    
         </div>
     )
 }

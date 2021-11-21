@@ -36,6 +36,7 @@
     "react-scroll-progress-bar": "^1.1.13",
     "react-scrollspy": "^3.4.3",
     "react-scrollspy-navigation": "^1.0.2",
+    "reactjs-popup": "^2.0.5",
     "styled-components": "^5.3.1",
     "web-vitals": "^1.1.2"
   },
