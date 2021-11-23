@@ -872,6 +872,10 @@ li > h2, li > p{
         margin-bottom: 0;
     }
 
+    .card-container li:last-of-type{
+        margin-bottom: 10vh;
+    }
+
     .project-card{
         height: fit-content;
         border-radius: 15px;
@@ -934,10 +938,6 @@ li > h2, li > p{
     .top-page-content{
         margin-left: 0;
         transition: 1s ease-in-out;
-    }
-
-    .project-image{
-        display: none;
     }
 }
 
@@ -1026,5 +1026,10 @@ li > h2, li > p{
 
     .projects{
         min-height: 2000px;
+    }
+
+    .project-image img{
+        width: auto;
+        height: 400px;
     }
 }
