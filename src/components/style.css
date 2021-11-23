@@ -869,6 +869,7 @@ li > h2, li > p{
 
     .card-container li{
         padding-bottom: 0;
+        margin-bottom: 0;
     }
 
     .project-card{
