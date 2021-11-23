@@ -48,8 +48,7 @@ export const ProjectCard = (props) => {
             languages.push(45);
             languages.push('CSS');
             languages.push(45);
-
-    }, [])
+        }, [])
 
     const renderSwitch = (language, precentage, sum) => {
         switch(language) {
@@ -118,7 +117,7 @@ export const ProjectCard = (props) => {
                 </div>
             </span>
         </div>
-        )}else{
+        )}else{ if(window.innerWidth > 800){
         return (
             <div className="project-card" key={props.id} style={{backgroundColor: 'transparent'}}>
                 <div className="card-header-own">
@@ -150,11 +149,62 @@ export const ProjectCard = (props) => {
                             </div>
                         </div></Fade>
                     </div>
-                    <Fade delay={600} right><div className="project-image"><img src={props.img} alt={props.name + 1}></img></div></Fade>
+                    <Fade delay={600} right><div className="project-image">{
+                        window.innerWidth < 800 ? (
+                            <img src={props.img1} alt={props.name + 1}></img>
+                        ) : (
+                            <img src={props.img} alt={props.name}></img>
+                        )
+                    }
+                    </div></Fade>
                 </div>
             </div>
     
-        );
+        );}else{
+            return (
+                <div className="project-card" key={props.id} style={{backgroundColor: 'transparent'}}>
+                    <div className="card-header-own">
+                        <Fade delay={400} right><h1 className="card-title">{props.name}</h1></Fade>
+                        <Fade delay={400} left><p className="card-date" style={{color: props.isDark ? props.theme.textDark : props.theme.textLight}}>0{props.id}</p></Fade>
+                    </div>
+                    {languages.length > 0 ? (
+                        <>
+                        <Fade delay={800} bottom><div className="technology-notations">
+                            {languages.map((language, index) => index % 2 === 0 ? <li className="technology-notation" style={{color: props.isDark ? props.theme.textDark : props.theme.textLight}}>{language}</li> : '')}
+                        </div></Fade>
+                        </>
+                    ) : (
+                        <>
+                            <Fade delay={800} top><p className="empty">My GitHub repository is empty ❌</p></Fade>
+                        </>
+                    )}
+                    <div className="project-body">
+                        <div className="image-side">
+                            <Fade delay={1000} bottom><p className="card-desc" style={{color: props.isDark ? props.theme.textDark : props.theme.textLight}}>{props.desc}</p></Fade>
+                            <Fade delay={1200} bottom><div className="button-notation-container">
+                                <div className="buttons">
+                                    {props.live.length > 0 ?
+                                        <Button className="project-button" href={props.live} target="_blank">Live Version</Button>
+                                        :
+                                        <br/>
+                                    }
+                                    <Button className="project-button" href={link} target="_blank">See Code</Button>
+                                </div>
+                            </div></Fade>
+                        </div>
+                        <Fade delay={1200} right><div className="project-image">{
+                            window.innerWidth < 800 ? (
+                                <img src={props.img1} alt={props.name + 1}></img>
+                            ) : (
+                                <img src={props.img} alt={props.name}></img>
+                            )
+                        }
+                        </div></Fade>
+                    </div>
+                </div>
+        
+            );
+        }
     }
 
 }
