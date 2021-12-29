@@ -1,0 +1,240 @@
+header{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    margin-right: 0px;
+    min-height: 10vh;
+    background-color: rgb(8, 12, 31);
+    justify-content: space-between;
+    padding: 0.5rem calc((100vw - 1000px)/2);
+    z-index: 10;
+}
+
+.navLink{
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 50px;
+    cursor: pointer;
+}
+
+.navLinkDark{
+    color: #04060F;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 50px;
+    cursor: pointer;
+}
+
+.navLink:active{
+    color: #15cdfc;
+}
+
+.navLink:hover{
+    color: #01bf71;
+    transition: 0.2s ease-in-out;
+}
+
+.favicon-header{
+    width: 50px;
+    height: auto;
+    position: relative;
+}
+
+.links{
+    display: flex;
+    flex-direction: row;
+}
+
+.hamburger{
+    position: relative;
+    left: 15vw;
+
+    @media screen and (max-width: 768px) {
+        display: block;
+        position: absolute;
+        right: -100vw;
+        top: -4.2vh;
+        transform: translate(-100%, 75%);
+        font-size: 1.8rem;
+        cursor: pointer;
+    }
+
+    @media only screen and (max-width: 470px) {
+        display: block;
+        position: absolute;
+        right: -100vw;
+        top: -4.2vh;
+        transform: translate(-100%, 75%);
+        font-size: 1.8rem;
+        cursor: pointer;
+    }
+}
+
+.hamburger-react{
+    display: none;
+    z-index: 10000;
+}
+
+.sticky{
+    position: fixed;
+    width: 100vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+.logo{
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    text-decoration: none;
+    padding-left: 20px;
+    padding-bottom: 10px;
+}
+
+.logo:hover{
+    color: #01bf71;
+    transition: 0.2s ease-in-out;
+}
+
+.progress-bar{
+    position: absolute;
+    left: 0 !important;
+}
+
+.wrg-toggle {
+    touch-action: pan-x;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .wrg-toggle-input {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  .wrg-toggle-check, .wrg-toggle-uncheck {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    line-height: 0;
+    opacity: 0;
+    transform: translateY(0);
+    transition: opacity .25s ease, transform .25s ease;
+  }
+
+  .wrg-toggle-check {
+    left: 8px;
+  }
+
+  .wrg-toggle-uncheck {
+    transform: translateY(100deg);
+    opacity: 1;
+    right: 10px;
+  }
+  
+  .wrg-toggle-uncheck span, 
+  .wrg-toggle-check span {
+    align-items: center;
+    display: flex;
+    height: 10px;
+    justify-content: center;
+    position: relative;
+    width: 10px;
+  }
+  
+  .wrg-toggle-container{
+    width: 50px;
+    height: 24px;
+    padding: 0;
+    border-radius: 30px;
+    background-color: #4d4d4d;
+    transition: all .2s ease;
+  }
+  
+  .wrg-toggle-circle{
+    transition: all .5s cubic-bezier(.23,1,.32,1) 0ms;
+    position: absolute;
+    left: 1px;
+    width: 22px;
+    height: 22px;
+    border: 1px solid #4d4d4d;
+    border-radius: 50%;
+    background-color: #fafafa;
+    box-sizing: border-box;
+    transition: all .25s ease;
+  }
+
+.bars{
+
+    display: none;
+    color: #fff;
+
+    @media screen and (max-width: 768px) {
+        display: block;
+        position: absolute;
+        right: -100vw;
+        top: -4.2vh;
+        transform: translate(-100%, 75%);
+        font-size: 1.8rem;
+        cursor: pointer;
+    }
+
+    @media only screen and (max-width: 470px) {
+        display: block;
+        position: absolute;
+        right: -100vw;
+        top: -4.2vh;
+        transform: translate(-100%, 75%);
+        font-size: 1.8rem;
+        cursor: pointer;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .navLink{
+        display: none;
+    }
+
+    .navLinkDark{
+        display: none;
+    }
+
+    .hamburger-react{
+        display: block;
+    }
+   
+}
