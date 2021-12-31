@@ -50,7 +50,7 @@ export const Contact = ({isDark, theme}) => {
                     <p>To contact me, you can send me an email with this form.<br/><br/>
 
                     If you would like to use a different platform:<br/>
-                    Email: <span style={{color: "#13da94"}}>hi@koppanydavid.hu</span><br/>
+                    Email: <span style={{color: "#13da94"}}>kopppanydavid@gmail.com</span><br/>
                     Phone: <span style={{color: "#13da94"}}>+36 30 1234567</span>
                     </p>
                     <form id="contact-form" ref={form} onSubmit={handleSubmit(sendEmail)}>
