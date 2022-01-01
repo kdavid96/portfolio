@@ -14,9 +14,9 @@ export const links = [
         text: 'CV',
         url: '#cv'
     },
-    {
+    /*{
         id: 4,
         text: 'Blog',
         url: 'blog'
-    }
+    }*/
 ]
