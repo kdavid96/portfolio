@@ -51,7 +51,7 @@ export const ProjectList = [
         repo_name: 'baranyi_epuletvillamossag',
         live: 'https://baranyiepuletvillamossag.netlify.app/',
     },
-    {
+    /*{
         id: 5,
         name: 'Communication',
         desc: <div>Application for communication between doctors and clients. <br/>You can try it out with the following credentials:<br/>Username : admin@admin.hu <br/>Password : admin123</div>,
@@ -63,5 +63,5 @@ export const ProjectList = [
         imgPC : './projects/portfolio-pc.png',
         repo_name: 'webkert-communication',
         live: 'https://webkert-4b250.web.app/',
-    },
+    },*/
 ]
