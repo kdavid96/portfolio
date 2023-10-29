@@ -30,7 +30,7 @@ export const Contact = ({isDark, theme}) => {
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const sendEmail = (e) => {
-        emailjs.sendForm('service_k6vwh6a', 'template_er8c0rg', form.current, 'user_UnRZIZUNeWGnLe12QfBTC')
+        emailjs.sendForm('service_kj4mzt5', 'template_kaspj5p', form.current, 'user_UnRZIZUNeWGnLe12QfBTC')
         .then((result) => {
             console.log(result.text);
             form.current.reset();
