@@ -25,8 +25,8 @@ export const Navbar = ({ isOpen, setOpen, isDark, setDark }) => {
         };
     }, []);
 
-    var isActive = false;
-    if(scrollPosition >= 60){isActive = true}
+  var isActive = false;
+  if(scrollPosition >= 60){isActive = true}
 
   const handleClick = (e) => {
     e.preventDefault()

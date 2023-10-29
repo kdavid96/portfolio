@@ -1,6 +1,6 @@
 import './Navbar.css';
 
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 
 const ToggleButton = ({isDark, setDark}) => {
     const setTheme = () => {

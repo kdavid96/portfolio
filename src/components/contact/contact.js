@@ -2,7 +2,6 @@ import '../style.css';
 
 import React, { useEffect, useRef, useState } from 'react';
 
-import Fade from 'react-reveal/Fade';
 import ImpressumPopUp from './impressumPopUp';
 import { GrGithub } from 'react-icons/gr';
 import { GrLinkedin } from 'react-icons/gr';
@@ -30,7 +29,7 @@ export const Contact = ({isDark, theme}) => {
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const sendEmail = (e) => {
-        emailjs.sendForm('service_lms6417', 'template_kaspj5p', form.current, 'user_UnRZIZUNeWGnLe12QfBTC')
+        emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, form.current, process.env.REACT_APP_PUBLIC_KEY)
         .then((result) => {
             console.log(result.text);
             form.current.reset();
@@ -65,11 +64,11 @@ export const Contact = ({isDark, theme}) => {
                 </div>
                 <div className="footer">
                         <IconContext.Provider value={{size: '1.2em', className: "github-icon" }}>
-                            <a style={{color: isDark ? '' : 'black'}} href="https://www.github.com/kdavid96" target="_blank" className="link-footer"><GrGithub /> GitHub</a>
+                            <a style={{color: isDark ? '' : 'black'}} href="https://www.github.com/kdavid96" target="_blank" rel="noreferrer" className="link-footer"><GrGithub /> GitHub</a>
                         </IconContext.Provider>
                         <ImpressumPopUp />
                         <IconContext.Provider value={{size: '1.2em', className: "linkedin-icon" }}>
-                            <a style={{color: isDark ? '' : 'black'}} href="https://www.linkedin.com/in/d%C3%A1vid-kopp%C3%A1ny-580449205/" target="_blank" className="link-footer"><GrLinkedin />LinkedIn</a>
+                            <a style={{color: isDark ? '' : 'black'}} href="https://www.linkedin.com/in/d%C3%A1vid-kopp%C3%A1ny-580449205/" target="_blank" rel="noreferrer" className="link-footer"><GrLinkedin />LinkedIn</a>
                         </IconContext.Provider>
                 </div>
             </div>

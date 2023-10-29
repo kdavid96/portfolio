@@ -4,7 +4,7 @@ import React, { useEffect, useState }  from 'react';
 
 import Fade from 'react-reveal/Fade';
 import Button from 'react-bootstrap/Button';
-import ProgressBar from 'react-bootstrap/ProgressBar';
+/* import ProgressBar from 'react-bootstrap/ProgressBar'; */
 import { ThreeHorseLoading } from 'react-loadingg';
 import axios from 'axios';
 
@@ -15,10 +15,10 @@ export const ProjectCard = (props) => {
     const [sum, setSum] = useState(0);
     const url = 'https://api.github.com/repos/kdavid96/';
     const my_token = process.env.REACT_APP_GITHUB_TOKEN;
-    var obj = [];
     var finalObj = [];
 
     useEffect(() => {
+        var obj = [];
         axios.get(url + props.repo_name + '/languages', { 
             headers: {
                  'Accept' : 'application/vnd.github.v3+json',
@@ -50,7 +50,7 @@ export const ProjectCard = (props) => {
             languages.push(45);
         }, [])
 
-    const renderSwitch = (language, precentage, sum) => {
+/*     const renderSwitch = (language, precentage, sum) => {
         switch(language) {
             case 'JavaScript':
                 return <ProgressBar style={{height: "400%"}} min={0} max={100} variant="danger" now={((precentage/sum)*100).toFixed(1)}/>;
@@ -65,9 +65,9 @@ export const ProjectCard = (props) => {
             default:
                 return <ProgressBar style={{height: "400%"}} min={0} max={100} variant="info" now={0}/>;
         }
-    }
+    } */
 
-    const notationSwitch = (language, precentage, sum) => {
+    /* const notationSwitch = (language, precentage, sum) => {
         switch(language) {
             case 'JavaScript':
                 return <p><span style={{backgroundColor: '#DC3545'}}></span>JavaScript {((precentage/sum)*100).toFixed(2)}%</p>;
@@ -82,25 +82,9 @@ export const ProjectCard = (props) => {
             default:
                 return <p><span style={{backgroundColor: 'transparent'}}></span></p>;
         }
-    }
+    } */
 
-    const renderProgressBar = () => {
-        let bar = [];
-        for(let i=0; i<languages.length; i+=2){
-            bar.push(renderSwitch(languages[i], languages[i+1], sum));
-        }
-        return bar;
-    }
-
-    const renderNotations = () => {
-        let bar = [];
-        for(let i=0; i<languages.length; i+=2){
-            bar.push(notationSwitch(languages[i], languages[i+1], sum));
-        }
-        return bar;
-    }
-
-    if (isLoading || languages[1] == 'Infinity') {
+    if (isLoading || languages[1] === 'Infinity') {
         return( 
         <div className="project-card">
             <span className="card-link" target="_blank" key={props.id}>

@@ -8,7 +8,7 @@ import { Contact } from './components/contact/contact';
 import { Home } from './components/home/home';
 import { Navbar } from './components/navbar';
 import { Projects } from './components/projects/projects';
-import { Blog } from './components/blog/blog';
+/* import { Blog } from './components/blog/blog'; */
 
 function App() {
   const [isOpen, setOpen] = useState(false);
