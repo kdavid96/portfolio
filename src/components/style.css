@@ -347,6 +347,7 @@ li > h2, li > p{
 }
 
 .error-message{
+    display: none;
     color: #d00;
     width: 35vw;
     text-align: center;

@@ -29,13 +29,13 @@ export const Contact = ({isDark, theme}) => {
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const sendEmail = (e) => {
-        emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, form.current, process.env.REACT_APP_PUBLIC_KEY)
+        emailjs.init(process.env.REACT_APP_PUBLIC_KEY);
+        emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, form.current)
         .then((result) => {
-            console.log(result.text);
             form.current.reset();
             document.getElementById('success-message').style.display = "block";
         }, (error) => {
-            console.log(error.text);
+            document.getElementById('error-message').style.display = "block";
         });
     }
 
@@ -60,6 +60,7 @@ export const Contact = ({isDark, theme}) => {
                         {errors.message && <p className="error-message">Please type in your message</p>}
                         <input type="submit" value="Send" className="submit-button"/>
                         {<p id="success-message" className="success-message">Your message has been sent! I'll get back to you as soon as possible.</p>}
+                        {<p id="error-message" className="error-message">An error has occured while sending the message. Please send an email manually to the address above.</p>}
                     </form>
                 </div>
                 <div className="footer">
