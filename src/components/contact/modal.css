@@ -16,3 +16,21 @@
 .highlighted{
     color: rgb(0, 221, 111);
 }
+
+.copy_email_button{
+    border:0;
+    margin: 4px 0;
+    padding: 3px 5px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.copy_email_button:hover{
+    fill:rgb(0, 221, 111);
+}
+
+.copy_email_parent{
+    background: transparent;
+    border: none;
+    color: white;
+}

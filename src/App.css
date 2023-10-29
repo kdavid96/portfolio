@@ -18,3 +18,11 @@ html, body{
 #home{
   background-color: rgb(8, 12, 31);
 }
+
+.Toastify__toast-theme--colored.Toastify__toast--success {
+  background-color: #00dd6f !important;
+}
+
+.Toastify__toast-body {
+  color:rgb(8, 12, 31);
+}
