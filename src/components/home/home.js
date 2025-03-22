@@ -30,7 +30,7 @@ export const Home = ({isDark, theme}) => {
                         <div className="top-page-text">
                             <p className="robo">Hi <span className="wave">👋</span><span className="spaceholder"></span>, my name is</p>
                                 <h1 className="title">David <a className="rainbow_text_animated" href="/">Koppany</a></h1>
-                            <p className="text">I'm a junior front-end developer based in Budapest, Hungary</p>
+                            <p className="text">I'm a ServiceNow/JavaScript developer based in Budapest, Hungary</p>
                         </div>
                         <div className="top-page-image-div">
                             <div className="background-outline">
